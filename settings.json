@@ -1,0 +1,17 @@
+{
+    "nifti_path": "value1",
+    "base_path": "value1",
+    "dicom_path": "value2",
+    "reconall_path": "value3",
+    "samseg_path": "value4",
+    "license_path": "value5",
+    "table_path": "value6",
+    "table_name": "value7",
+    "file_identifiers": {
+      "T1":[],
+      "T2":[],
+      "FLAIR":[]
+    }
+
+  }
+  
