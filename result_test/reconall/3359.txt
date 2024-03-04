@@ -1,0 +1,1 @@
+recon-all -all -s 3359 -i /ext/fs-subjects/3359/MPRAGE_T1_SAG.nii -no-isrunning 

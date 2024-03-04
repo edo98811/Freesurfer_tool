@@ -1,0 +1,72 @@
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 1 - 3450
+running samseg: /ext/processed-subjects/3450...
+run_samseg --input /ext/fs-subjects/3450/3D_SAG.nii /ext/fs-subjects//ext/fs-subjects/3450/flair_t2_reg.nii  --pallidum-separate
+--output /ext/processed-subjects/3450 --threads 8
+run_samseg --input /ext/fs-subjects/3450/3D_SAG.nii /ext/fs-subjects/3450/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3450 --lesion --threads 8
+done
+ 
+subject: 2 - 3451
+running samseg: /ext/processed-subjects/3451...
+run_samseg --input /ext/fs-subjects/3451/3D_SAG.nii /ext/fs-subjects//ext/fs-subjects/3451/flair_t2_reg.nii  --pallidum-separate
+--output /ext/processed-subjects/3451 --threads 8
+run_samseg --input /ext/fs-subjects/3451/3D_SAG.nii /ext/fs-subjects/3451/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3451 --lesion --threads 8
+done
+ 
+subject: 3 - 3452
+running samseg: /ext/processed-subjects/3452...
+run_samseg --input /ext/fs-subjects/3452/3D_SAG.nii /ext/fs-subjects//ext/fs-subjects/3452/flair_t2_reg.nii  --pallidum-separate
+--output /ext/processed-subjects/3452 --threads 8
+run_samseg --input /ext/fs-subjects/3452/3D_SAG.nii /ext/fs-subjects/3452/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3452 --lesion --threads 8
+done
+ 
+subject: 4 - 3453
+running samseg: /ext/processed-subjects/3453...
+run_samseg --input /ext/fs-subjects/3453/3D_SAG.nii /ext/fs-subjects//ext/fs-subjects/3453/flair_t2_reg.nii  --pallidum-separate
+--output /ext/processed-subjects/3453 --threads 8
+run_samseg --input /ext/fs-subjects/3453/3D_SAG.nii /ext/fs-subjects/3453/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3453 --lesion --threads 8
+done
+ 
+subject: 5 - 3651
+running samseg: /ext/processed-subjects/3651...
+run_samseg --input /ext/fs-subjects/3651/SAG_T1_3DMPRAGE.nii /ext/fs-subjects//ext/fs-subjects/3651/flair_t2_reg.nii  --pallidum-separate
+--output /ext/processed-subjects/3651 --threads 8
+run_samseg --input /ext/fs-subjects/3651/SAG_T1_3DMPRAGE.nii /ext/fs-subjects/3651/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3651 --lesion --threads 8
+done
+ 
+subject: 6 - 3403
+running samseg: /ext/processed-subjects/3403...
+run_samseg --input /ext/fs-subjects/3403/AX_DE_TSE.nii /ext/fs-subjects//ext/fs-subjects/3403/flair_t2_reg.nii  --pallidum-separate
+--output /ext/processed-subjects/3403 --threads 8
+run_samseg --input /ext/fs-subjects/3403/AX_DE_TSE.nii /ext/fs-subjects/3403/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3403 --lesion --threads 8
+done
+ 
+subject: 7 - 3404
+running samseg: /ext/processed-subjects/3404...
+run_samseg --input /ext/fs-subjects/3404/AX_DE_TSE.nii /ext/fs-subjects//ext/fs-subjects/3404/flair_t2_reg.nii  --pallidum-separate
+--output /ext/processed-subjects/3404 --threads 8
+run_samseg --input /ext/fs-subjects/3404/AX_DE_TSE.nii /ext/fs-subjects/3404/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3404 --lesion --threads 8
+done
+ 
+subject: 8 - 3062
+running samseg: /ext/processed-subjects/3062...
+run_samseg --input /ext/fs-subjects/3062/SAG_3D_T1.nii /ext/fs-subjects//ext/fs-subjects/3062/flair_t2_reg.nii  --pallidum-separate
+--output /ext/processed-subjects/3062 --threads 8
+run_samseg --input /ext/fs-subjects/3062/SAG_3D_T1.nii /ext/fs-subjects/3062/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3062 --lesion --threads 8
+done
+ 
+subject: 9 - 3605
+running samseg: /ext/processed-subjects/3605...
+run_samseg --input /ext/fs-subjects/3605/SAG_T1_3D_MPRAGE.nii /ext/fs-subjects//ext/fs-subjects/3605/flair_t2_reg.nii  --pallidum-separate
+--output /ext/processed-subjects/3605 --threads 8
+run_samseg --input /ext/fs-subjects/3605/SAG_T1_3D_MPRAGE.nii /ext/fs-subjects/3605/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3605 --lesion --threads 8
+done
+ 
+subject: 10 - 3102
+running samseg: /ext/processed-subjects/3102...
+run_samseg --input /ext/fs-subjects/3102/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3102/flair_t2_reg.nii  --pallidum-separate
+--output /ext/processed-subjects/3102 --threads 8
+run_samseg --input /ext/fs-subjects/3102/MPRAGE_GRAPPA.nii /ext/fs-subjects/3102/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3102 --lesion --threads 8
+done
+stopped at iteration 10

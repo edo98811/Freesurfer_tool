@@ -1,0 +1,1 @@
+recon-all -all -s 3350 -i /ext/fs-subjects/3350/MPRAGE_GRAPPA.nii -no-isrunning 

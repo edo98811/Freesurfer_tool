@@ -1,0 +1,1 @@
+recon-all -all -s 4078 -i /ext/fs-subjects/4078/SAG_3D_SPGR.nii -no-isrunning 

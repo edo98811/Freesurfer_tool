@@ -1,6 +1,7 @@
 import json
 from collections import defaultdict
 import os
+import sys
 
 def read_settings_from_json(file_path):
     """
@@ -34,9 +35,7 @@ def create_tmp_folder():
     tmp_folder = os.path.join(os.getcwd(), 'tmp')
     if not os.path.exists(tmp_folder):
         os.mkdir(tmp_folder)
-        print(f"Folder 'tmp' created in {os.getcwd()}.")
-    else:
-        print("Folder 'tmp' already exists.")
+
 
 def delete_tmp_folder():
     """
@@ -45,6 +44,5 @@ def delete_tmp_folder():
     tmp_folder = os.path.join(os.getcwd(), 'tmp')
     if os.path.exists(tmp_folder):
         os.rmdir(tmp_folder)
-        print(f"Folder 'tmp' deleted from {os.getcwd()}.")
-    else:
-        print("Folder 'tmp' does not exist.")
+
+

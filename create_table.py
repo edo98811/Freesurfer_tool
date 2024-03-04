@@ -8,13 +8,16 @@ import helper_functions as h
 class Table():
   def __init__(self, SET):
     self.SET = SET
-    self.table = self.create_mris_table()
+    self.create_mris_table()
+    self.save_to_excel()
+    self.table = pd.read_excel(os.path.join(self.SET["table_path"], self.SET["table_name"]))
+
 
   def create_mris_table(self):
-      self.table = self.create_table_df(os.path.join(self.SET["base_path"], self.SET["dicom_path"]))
-      
+      self.table = self.create_table_df(os.path.join(self.SET["dicom"]))
+
       self.create_subj_info()
-      self.add_processing_info(os.path.join(self.SET["base_path"], self.SET["reconall_path"]), os.path.join(self.SET["base_path"], self.SET["samseg_path"]), os.path.join(self.SET["base_path"], self.SET["nifti_path"]))
+      self.add_processing_info(os.path.join(self.SET["reconall"]), os.path.join(self.SET["samseg"]), os.path.join(self.SET["nifti"]))
 
       
   def update_mris_table(self, df_path: str):
@@ -22,7 +25,7 @@ class Table():
     self.table = pd.read_excel(df_path)
 
     self.create_subj_info()
-    self.add_processing_info(os.path.join(self.SET["base_path"], self.SET["reconall_path"]), os.path.join(self.SET["base_path"], self.SET["samseg_path"]), os.path.join(self.SET["base_path"], self.SET["nifti_path"]))
+    self.add_processing_info(os.path.join(self.SET["reconall"]), os.path.join(self.SET["samseg"]), os.path.join(self.SET["nifti"]))
 
 
 # to delete the return value
@@ -53,7 +56,7 @@ class Table():
                 if not (data["acquisition"][-1] == acquisition):
                   data["acquisition"].append(acquisition)
                   data["mris"].append([MRIdir_id]) # list because i neet to be able to append to it other mris
-                  data["paths"].append([rel_path]) # to convert, it is not in the diret childern
+                  data["paths"].append([rel_path]) # to convert, it is not in the direct childern
                   
                 # it is always the last one in the queue to add
                 else:

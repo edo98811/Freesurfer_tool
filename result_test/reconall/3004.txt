@@ -1,0 +1,1 @@
+recon-all -all -s 3004 -i /ext/fs-subjects/3004/sag_3D_FSPGR_BRAVO_straight.nii -no-isrunning 

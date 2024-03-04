@@ -11,7 +11,8 @@ class FreesurferTool():
         self.SET = h.read_settings_from_json("settings.json")
         self.Docker = d.DockerInstance(self.SET, save_folder, destination_folder)
         self.Table = t.Table(self.SET)
-        self.Prepare = p.Prepare(self.SET)
+        self.Prepare = p.Prepare(self.SET, self.Table)
+
 
     def load_settings():
         pass
@@ -28,14 +29,14 @@ def run_recon_all():
     fs.Docker.run("reconall", 120, 10)
 
 def run_samseg():
-    fs = FreesurferTool(save_folder="nifti", destination_folder="reconall")
+    fs = FreesurferTool(save_folder="nifti", destination_folder="samseg")
     fs.Prepare.prepare_for_samseg()
     fs.Docker.run("samseg", 120, 10) 
 
 def registration():
-    fs = FreesurferTool(save_folder="nifti", destination_folder="reconall")
+    fs = FreesurferTool(save_folder="nifti", destination_folder="nifti")
     fs.Prepare.prepare_for_samseg()
-    fs.Docker.run("registration", 120, 10) 
+    fs.Docker.run("register", 120, 10) 
 
 
 
@@ -47,7 +48,7 @@ def run_selected_function(args) -> None:
         run_samseg()
     elif args.option == "reconall":
         run_recon_all()
-    elif args.option == "registration":
+    elif args.option == "register":
         registration()
     else:
         print("Invalid option. Please provide a valid option.")

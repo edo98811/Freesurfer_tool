@@ -1,0 +1,1 @@
+recon-all -all -s 3411 -i /ext/fs-subjects/3411/SAG_T1_3D_FSPGR.nii -no-isrunning 

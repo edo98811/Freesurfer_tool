@@ -1,0 +1,1 @@
+recon-all -all -s 3076 -i /ext/fs-subjects/3076/AX_DUAL_TSE.nii -no-isrunning 

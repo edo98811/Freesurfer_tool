@@ -33,9 +33,9 @@ def _remove_spaces(data_path: str) -> None:
       
 # Data preparation 
 class Prepare():
-  def __init__(self, SET):
-    # self.df = pd.read_excel(os.path.join(SET["table_path"], SET["table_name"]))
-    self.df = ""
+  def __init__(self, SET, table):
+    self.df = table.table
+    self.SET = SET
 
   def prepare_for_conversion(self, cols=["mris"], last=False)-> None:
     

@@ -1,0 +1,1 @@
+recon-all -all -s 3222 -i /ext/fs-subjects/3222/axial_spgr.nii -no-isrunning 

@@ -1,20 +1,28 @@
 {
-    "nifti_path": "/mnt/S/edoardoStorage/Pipeline_MRI2/PPMI_nifti/",
-    "base_path": "/mnt/S/edoardoStorage/Freesurfer_tool/result_test/",
-    "dicom_path": "/mnt/S/edoardoStorage/Pipeline_MRI2/PPMI/",
-    "app_path":"/mnt/S/edoardoStorage/Freesurfer_tool/",
-    "reconall_path": "/mnt/S/edoardoStorage/Freesurfer_tool/result_test/reconall/",
-    "samseg_path": "/mnt/S/edoardoStorage/Freesurfer_tool/result_test/samseg/",
+    "nifti": "/mnt/S/edoardoStorage/Pipeline_MRI2/PPMI_nifti/",
+    "base_path": "/mnt/S/edoardoStorage/Freesurfer_tool/",
+    "dicom": "/mnt/S/edoardoStorage/Pipeline_MRI2/PPMI/",
+    "app_path": "/mnt/S/edoardoStorage/Freesurfer_tool/",
+    "reconall": "ciao",
+    "samseg": "/mnt/S/edoardoStorage/Freesurfer_tool/result_test/samseg/",
     "license_path": "/mnt/S/edoardoStorage/Pipeline_MRIs/license.txt",
     "table_path": "/mnt/S/edoardoStorage/Freesurfer_tool/result_test/",
     "table_name": "test_table.xlsx",
     "file_identifiers": {
-      "T1":[],
-      "T2":["T2", "t2"],
-      "FLAIR":["FLAIR"],
-      "T1_no":["T2", "t2", "FLAIR"],
-      "T2_no":[],
-      "FLAIR_no":[]
+        "T1": [],
+        "T2": [
+            "T2",
+            "t2"
+        ],
+        "FLAIR": [
+            "FLAIR"
+        ],
+        "T1_no": [
+            "T2",
+            "t2",
+            "FLAIR"
+        ],
+        "T2_no": [],
+        "FLAIR_no": []
     }
-  }
-  
+}

@@ -1,0 +1,1 @@
+recon-all -all -s 3062 -i /ext/fs-subjects/3062/SAG_3D_T1.nii -no-isrunning 

@@ -1,7 +1,8 @@
 import subprocess
-import datetime 
+from datetime import datetime 
 import helper_functions as h
-
+import math
+import os
 
 class DockerInstance():
     def __init__(self, SET, source, destination):
@@ -9,12 +10,18 @@ class DockerInstance():
         self.destination = destination
         self.SET = SET
 
-    def run(self, function, n_loops, per_loop, log_file="log.txt"):
+    def run(self, function, n_subj, per_loop, log_file="log.txt"):
+
+        n_loops = math.ceil(n_subj/per_loop)
         
         # TODO: add check on source and destination
+        logf = os.path.join(self.SET["base_path"], "docker_logs")
+        if not os.path.exists(logf):
+            os.makedirs(logf)
 
         start = 0
         print(f"Total containers to be run {n_loops + 1}")
+        print("")
         container_list = subprocess.check_output("docker container ls --format '{{.Names}}' | grep '^edoardo_freesurfer_'", shell=True).decode().splitlines()
 
         max_number = 0
@@ -29,26 +36,27 @@ class DockerInstance():
         for i in range(n_loops):
             end = start + per_loop
             max_number += 1
-            print(f"Iteration: {i+1}")
+            # print(f"Iteration: {i+1}")
             print(f"running container edoardo_freesurfer_{max_number}")
-            print(f"with parameters sh freesurfer.sh {function} {start} {end}")
+            # print(f"with parameters sh freesurfer.sh {function} {start} {end}")
 
             with open(log_file, "a") as log:
                 log.write(f"    edoardo_freesurfer_{max_number}\n")
 
-            command = [
+            command = [ # " ".join(
                 "docker", "run", "--rm", "--name", f"edoardo_freesurfer_{max_number}",
-                "-v", f"{SET["base_path"]}/license.txt:/license.txt:ro",
-                "-v", f"{SET["base_path"]}/freesurfer_all.sh:/root/freesurfer.sh",
-                "-v", f"{SET["app_path"]}:{SET["app_path"]}:ro",
-                "-v", f"{SET[self.source]}:",
-                "-v", f"{SET[self.destination]}:",
+                "-v", f"{self.SET["license_path"]}:/license.txt:ro",
+                "-v", f"{self.SET["base_path"]}/freesurfer_all.sh:/root/freesurfer.sh",
+                "-v", f"{self.SET["app_path"]}/tmp:/info:ro",
+                "-v", f"{self.SET[self.destination]}:/ext/processed-subjects",
+                "-v", f"{self.SET[self.source]}:/ext/fs-subjects",
                 "-e", "FS_LICENSE=license.txt",
                 "1b0f81a8cb9f",
                 "sh", "freesurfer.sh", function, str(start), str(end)
             ]
-                
-            subprocess.Popen(command, shell=True)
+            # print(command)
+            with open(f"{logf}/edoardo_freesurfer_{max_number}.txt", "w") as f:
+                subprocess.Popen(command, stdout=f, stderr=f)
 
             start = end
 
@@ -56,6 +64,8 @@ class DockerInstance():
             log.write(f"with command: sh freesurfer.sh {function} >/dev/null 2>&1\n")
             log.write(f"repetitions per loop: {per_loop} \n")
             log.write("\n\n")
+            
+        print("")
 
     def debugging_container(self, function):
         pass

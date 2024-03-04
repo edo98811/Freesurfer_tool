@@ -1,0 +1,172 @@
+on 2024-03-04 14:13:00.894056 containers started: 
+    edoardo_freesurfer_2
+on 2024-03-04 14:13:28.002750 containers started: 
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+    edoardo_freesurfer_12
+    edoardo_freesurfer_13
+with command: sh freesurfer.sh samseg >/dev/null 2>&1
+repetitions per loop: 10 
+
+
+on 2024-03-04 14:24:44.430534 containers started: 
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+    edoardo_freesurfer_12
+    edoardo_freesurfer_13
+with command: sh freesurfer.sh samseg >/dev/null 2>&1
+repetitions per loop: 10 
+
+
+on 2024-03-04 14:27:39.414750 containers started: 
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+    edoardo_freesurfer_12
+    edoardo_freesurfer_13
+with command: sh freesurfer.sh samseg >/dev/null 2>&1
+repetitions per loop: 10 
+
+
+on 2024-03-04 14:39:58.202776 containers started: 
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+    edoardo_freesurfer_12
+    edoardo_freesurfer_13
+with command: sh freesurfer.sh samseg >/dev/null 2>&1
+repetitions per loop: 10 
+
+
+on 2024-03-04 14:40:31.787056 containers started: 
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+    edoardo_freesurfer_12
+    edoardo_freesurfer_13
+with command: sh freesurfer.sh registration >/dev/null 2>&1
+repetitions per loop: 10 
+
+
+on 2024-03-04 14:45:35.326015 containers started: 
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+    edoardo_freesurfer_12
+    edoardo_freesurfer_13
+with command: sh freesurfer.sh samseg >/dev/null 2>&1
+repetitions per loop: 10 
+
+
+on 2024-03-04 14:46:22.088504 containers started: 
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+    edoardo_freesurfer_12
+    edoardo_freesurfer_13
+with command: sh freesurfer.sh samseg >/dev/null 2>&1
+repetitions per loop: 10 
+
+
+on 2024-03-04 14:46:42.876054 containers started: 
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+    edoardo_freesurfer_12
+    edoardo_freesurfer_13
+with command: sh freesurfer.sh samseg >/dev/null 2>&1
+repetitions per loop: 10 
+
+
+on 2024-03-04 14:47:49.975724 containers started: 
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+    edoardo_freesurfer_12
+    edoardo_freesurfer_13
+with command: sh freesurfer.sh samseg >/dev/null 2>&1
+repetitions per loop: 10 
+
+
+on 2024-03-04 14:47:52.192011 containers started: 
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+    edoardo_freesurfer_12
+    edoardo_freesurfer_13
+    edoardo_freesurfer_14
+    edoardo_freesurfer_15
+    edoardo_freesurfer_16
+    edoardo_freesurfer_17
+with command: sh freesurfer.sh samseg >/dev/null 2>&1
+repetitions per loop: 10 
+
+

@@ -1,0 +1,1660 @@
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 1 - /ext/processed-subjects/3450
+running recon-all: 3450... from /ext/fs-subjects/3450/3D_SAG.nii
+done
+ 
+subject: 2 - /ext/processed-subjects/3451
+running recon-all: 3451... from /ext/fs-subjects/3451/3D_SAG.nii
+done
+ 
+subject: 3 - /ext/processed-subjects/3452
+running recon-all: 3452... from /ext/fs-subjects/3452/3D_SAG.nii
+done
+ 
+subject: 4 - /ext/processed-subjects/3453
+running recon-all: 3453... from /ext/fs-subjects/3453/3D_SAG.nii
+done
+ 
+subject: 5 - /ext/processed-subjects/3651
+running recon-all: 3651... from /ext/fs-subjects/3651/SAG_T1_3DMPRAGE.nii
+done
+ 
+subject: 6 - /ext/processed-subjects/3403
+running recon-all: 3403... from /ext/fs-subjects/3403/AX_DE_TSE.nii
+done
+ 
+subject: 7 - /ext/processed-subjects/3404
+running recon-all: 3404... from /ext/fs-subjects/3404/AX_DE_TSE.nii
+done
+ 
+subject: 8 - /ext/processed-subjects/3062
+running recon-all: 3062... from /ext/fs-subjects/3062/SAG_3D_T1.nii
+done
+ 
+subject: 9 - /ext/processed-subjects/3605
+running recon-all: 3605... from /ext/fs-subjects/3605/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 10 - /ext/processed-subjects/3102
+running recon-all: 3102... from /ext/fs-subjects/3102/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 10
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 10 - /ext/processed-subjects/3102
+running recon-all: 3102... from /ext/fs-subjects/3102/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 11 - /ext/processed-subjects/3104
+running recon-all: 3104... from /ext/fs-subjects/3104/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 12 - /ext/processed-subjects/3300
+running recon-all: 3300... from /ext/fs-subjects/3300/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 13 - /ext/processed-subjects/3301
+running recon-all: 3301... from /ext/fs-subjects/3301/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 14 - /ext/processed-subjects/3457
+running recon-all: 3457... from /ext/fs-subjects/3457/3D_SAG.nii
+done
+ 
+subject: 15 - /ext/processed-subjects/3600
+running recon-all: 3600... from /ext/fs-subjects/3600/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 16 - /ext/processed-subjects/3411
+running recon-all: 3411... from /ext/fs-subjects/3411/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 17 - /ext/processed-subjects/3414
+running recon-all: 3414... from /ext/fs-subjects/3414/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 18 - /ext/processed-subjects/3415
+running recon-all: 3415... from /ext/fs-subjects/3415/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 19 - /ext/processed-subjects/3004
+running recon-all: 3004... from /ext/fs-subjects/3004/sag_3D_FSPGR_BRAVO_straight.nii
+done
+ 
+subject: 20 - /ext/processed-subjects/3064
+running recon-all: 3064... from /ext/fs-subjects/3064/AX_DUAL_TSE.nii
+done
+stopped at iteration 20
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 20 - /ext/processed-subjects/3064
+running recon-all: 3064... from /ext/fs-subjects/3064/AX_DUAL_TSE.nii
+done
+ 
+subject: 21 - /ext/processed-subjects/3361
+running recon-all: 3361... from /ext/fs-subjects/3361/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 22 - /ext/processed-subjects/3406
+running recon-all: 3406... from /ext/fs-subjects/3406/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 23 - /ext/processed-subjects/3604
+running recon-all: 3604... from /ext/fs-subjects/3604/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 24 - /ext/processed-subjects/3608
+running recon-all: 3608... from /ext/fs-subjects/3608/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 25 - /ext/processed-subjects/3111
+running recon-all: 3111... from /ext/fs-subjects/3111/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 26 - /ext/processed-subjects/3156
+running recon-all: 3156... from /ext/fs-subjects/3156/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 27 - /ext/processed-subjects/3157
+running recon-all: 3157... from /ext/fs-subjects/3157/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 28 - /ext/processed-subjects/3165
+running recon-all: 3165... from /ext/fs-subjects/3165/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 29 - /ext/processed-subjects/3852
+running recon-all: 3852... from /ext/fs-subjects/3852/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 30 - /ext/processed-subjects/3854
+running recon-all: 3854... from /ext/fs-subjects/3854/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 30
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 30 - /ext/processed-subjects/3854
+running recon-all: 3854... from /ext/fs-subjects/3854/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 31 - /ext/processed-subjects/3855
+running recon-all: 3855... from /ext/fs-subjects/3855/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 32 - /ext/processed-subjects/3565
+running recon-all: 3565... from /ext/fs-subjects/3565/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 33 - /ext/processed-subjects/3350
+running recon-all: 3350... from /ext/fs-subjects/3350/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 34 - /ext/processed-subjects/3352
+running recon-all: 3352... from /ext/fs-subjects/3352/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 35 - /ext/processed-subjects/3353
+running recon-all: 3353... from /ext/fs-subjects/3353/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 36 - /ext/processed-subjects/3354
+running recon-all: 3354... from /ext/fs-subjects/3354/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 37 - /ext/processed-subjects/3357
+running recon-all: 3357... from /ext/fs-subjects/3357/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 38 - /ext/processed-subjects/3358
+running recon-all: 3358... from /ext/fs-subjects/3358/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 39 - /ext/processed-subjects/3359
+running recon-all: 3359... from /ext/fs-subjects/3359/MPRAGE_T1_SAG.nii
+done
+ 
+subject: 40 - /ext/processed-subjects/3114
+running recon-all: 3114... from /ext/fs-subjects/3114/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 40
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 40 - /ext/processed-subjects/3114
+running recon-all: 3114... from /ext/fs-subjects/3114/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 41 - /ext/processed-subjects/3367
+running recon-all: 3367... from /ext/fs-subjects/3367/MPRAGE_T1_SAG.nii
+done
+ 
+subject: 42 - /ext/processed-subjects/3072
+running recon-all: 3072... from /ext/fs-subjects/3072/SAG_3D_T1.nii
+done
+ 
+subject: 43 - /ext/processed-subjects/3270
+running recon-all: 3270... from /ext/fs-subjects/3270/SAG_FSPGR_3D.nii
+done
+ 
+subject: 44 - /ext/processed-subjects/3271
+running recon-all: 3271... from /ext/fs-subjects/3271/SAG_FSPGR_3D.nii
+done
+ 
+subject: 45 - /ext/processed-subjects/3517
+running recon-all: 3517... from /ext/fs-subjects/3517/MPRAGEadni.nii
+done
+ 
+subject: 46 - /ext/processed-subjects/3615
+running recon-all: 3615... from /ext/fs-subjects/3615/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 47 - /ext/processed-subjects/3464
+running recon-all: 3464... from /ext/fs-subjects/3464/3D_SAG.nii
+done
+ 
+subject: 48 - /ext/processed-subjects/3563
+running recon-all: 3563... from /ext/fs-subjects/3563/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 49 - /ext/processed-subjects/3805
+running recon-all: 3805... from /ext/fs-subjects/3805/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 50 - /ext/processed-subjects/3807
+running recon-all: 3807... from /ext/fs-subjects/3807/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 50
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 50 - /ext/processed-subjects/3807
+running recon-all: 3807... from /ext/fs-subjects/3807/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 51 - /ext/processed-subjects/3811
+running recon-all: 3811... from /ext/fs-subjects/3811/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 52 - /ext/processed-subjects/3812
+running recon-all: 3812... from /ext/fs-subjects/3812/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 53 - /ext/processed-subjects/3073
+running recon-all: 3073... from /ext/fs-subjects/3073/SAG_3D_T1.nii
+done
+ 
+subject: 54 - /ext/processed-subjects/3277
+running recon-all: 3277... from /ext/fs-subjects/3277/SAG_FSPGR_3D.nii
+done
+ 
+subject: 55 - /ext/processed-subjects/3074
+running recon-all: 3074... from /ext/fs-subjects/3074/SAG_3D_T1.nii
+done
+ 
+subject: 56 - /ext/processed-subjects/3619
+running recon-all: 3619... from /ext/fs-subjects/3619/SAG_SPGR_3D.nii
+done
+ 
+subject: 57 - /ext/processed-subjects/3620
+running recon-all: 3620... from /ext/fs-subjects/3620/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 58 - /ext/processed-subjects/3172
+running recon-all: 3172... from /ext/fs-subjects/3172/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 59 - /ext/processed-subjects/3310
+running recon-all: 3310... from /ext/fs-subjects/3310/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 60 - /ext/processed-subjects/3759
+running recon-all: 3759... from /ext/fs-subjects/3759/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 60
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 60 - /ext/processed-subjects/3759
+running recon-all: 3759... from /ext/fs-subjects/3759/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 61 - /ext/processed-subjects/3219
+running recon-all: 3219... from /ext/fs-subjects/3219/AX_T1.nii
+done
+ 
+subject: 62 - /ext/processed-subjects/3221
+running recon-all: 3221... from /ext/fs-subjects/3221/axial_spgr.nii
+done
+ 
+subject: 63 - /ext/processed-subjects/3222
+running recon-all: 3222... from /ext/fs-subjects/3222/axial_spgr.nii
+done
+ 
+subject: 64 - /ext/processed-subjects/3527
+running recon-all: 3527... from /ext/fs-subjects/3527/MPRAGEadni.nii
+done
+ 
+subject: 65 - /ext/processed-subjects/3952
+running recon-all: 3952... from /ext/fs-subjects/3952/FSPGR_3D_SAG.nii
+done
+ 
+subject: 66 - /ext/processed-subjects/3076
+running recon-all: 3076... from /ext/fs-subjects/3076/AX_DUAL_TSE.nii
+done
+ 
+subject: 67 - /ext/processed-subjects/3468
+running recon-all: 3468... from /ext/fs-subjects/3468/3D_SAG.nii
+done
+ 
+subject: 68 - /ext/processed-subjects/3624
+running recon-all: 3624... from /ext/fs-subjects/3624/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 69 - /ext/processed-subjects/3572
+running recon-all: 3572... from /ext/fs-subjects/3572/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 70 - /ext/processed-subjects/3765
+running recon-all: 3765... from /ext/fs-subjects/3765/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 70
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 70 - /ext/processed-subjects/3765
+running recon-all: 3765... from /ext/fs-subjects/3765/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 71 - /ext/processed-subjects/3767
+running recon-all: 3767... from /ext/fs-subjects/3767/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 72 - /ext/processed-subjects/4010
+running recon-all: 4010... from /ext/fs-subjects/4010/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 73 - /ext/processed-subjects/3625
+running recon-all: 3625... from /ext/fs-subjects/3625/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 74 - /ext/processed-subjects/3374
+running recon-all: 3374... from /ext/fs-subjects/3374/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 75 - /ext/processed-subjects/3176
+running recon-all: 3176... from /ext/fs-subjects/3176/SAG_MPRAGE_GRAPPA.nii
+done
+ 
+subject: 76 - /ext/processed-subjects/3016
+running recon-all: 3016... from /ext/fs-subjects/3016/sag_3D_FSPGR_BRAVO_straight.nii
+done
+ 
+subject: 77 - /ext/processed-subjects/3466
+running recon-all: 3466... from /ext/fs-subjects/3466/3D_SAG.nii
+done
+ 
+subject: 78 - /ext/processed-subjects/3373
+running recon-all: 3373... from /ext/fs-subjects/3373/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 79 - /ext/processed-subjects/4022
+running recon-all: 4022... from /ext/fs-subjects/4022/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 80 - /ext/processed-subjects/3325
+running recon-all: 3325... from /ext/fs-subjects/3325/SAG_MPRAGE_GRAPPA.nii
+done
+stopped at iteration 80
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 80 - /ext/processed-subjects/3325
+running recon-all: 3325... from /ext/fs-subjects/3325/SAG_MPRAGE_GRAPPA.nii
+done
+ 
+subject: 81 - /ext/processed-subjects/3587
+running recon-all: 3587... from /ext/fs-subjects/3587/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 82 - /ext/processed-subjects/3817
+running recon-all: 3817... from /ext/fs-subjects/3817/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 83 - /ext/processed-subjects/3827
+running recon-all: 3827... from /ext/fs-subjects/3827/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 84 - /ext/processed-subjects/3410
+running recon-all: 3410... from /ext/fs-subjects/3410/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 85 - /ext/processed-subjects/3430
+running recon-all: 3430... from /ext/fs-subjects/3430/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 86 - /ext/processed-subjects/3383
+running recon-all: 3383... from /ext/fs-subjects/3383/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 87 - /ext/processed-subjects/3627
+running recon-all: 3627... from /ext/fs-subjects/3627/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 88 - /ext/processed-subjects/3629
+running recon-all: 3629... from /ext/fs-subjects/3629/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 89 - /ext/processed-subjects/4051
+running recon-all: 4051... from /ext/fs-subjects/4051/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 90 - /ext/processed-subjects/3385
+running recon-all: 3385... from /ext/fs-subjects/3385/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 90
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 90 - /ext/processed-subjects/3385
+running recon-all: 3385... from /ext/fs-subjects/3385/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 91 - /ext/processed-subjects/3750
+running recon-all: 3750... from /ext/fs-subjects/3750/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 92 - /ext/processed-subjects/4059
+running recon-all: 4059... from /ext/fs-subjects/4059/sag_mprage.nii
+done
+ 
+subject: 93 - /ext/processed-subjects/4090
+running recon-all: 4090... from /ext/fs-subjects/4090/sag_mprage.nii
+done
+ 
+subject: 94 - /ext/processed-subjects/4092
+running recon-all: 4092... from /ext/fs-subjects/4092/sag_mprage.nii
+done
+ 
+subject: 95 - /ext/processed-subjects/4099
+running recon-all: 4099... from /ext/fs-subjects/4099/sag_mprage.nii
+done
+ 
+subject: 96 - /ext/processed-subjects/4100
+running recon-all: 4100... from /ext/fs-subjects/4100/sag_mprage.nii
+done
+ 
+subject: 97 - /ext/processed-subjects/4101
+running recon-all: 4101... from /ext/fs-subjects/4101/sag_mprage.nii
+done
+ 
+subject: 98 - /ext/processed-subjects/4102
+running recon-all: 4102... from /ext/fs-subjects/4102/sag_mprage.nii
+done
+ 
+subject: 99 - /ext/processed-subjects/4103
+running recon-all: 4103... from /ext/fs-subjects/4103/sag_mprage.nii
+done
+ 
+subject: 100 - /ext/processed-subjects/4030
+running recon-all: 4030... from /ext/fs-subjects/4030/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 100
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 100 - /ext/processed-subjects/4030
+running recon-all: 4030... from /ext/fs-subjects/4030/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 101 - /ext/processed-subjects/4067
+running recon-all: 4067... from /ext/fs-subjects/4067/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 102 - /ext/processed-subjects/3387
+running recon-all: 3387... from /ext/fs-subjects/3387/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 103 - /ext/processed-subjects/3479
+running recon-all: 3479... from /ext/fs-subjects/3479/3D_SAG.nii
+done
+ 
+subject: 104 - /ext/processed-subjects/3481
+running recon-all: 3481... from /ext/fs-subjects/3481/3D_SAG.nii
+done
+ 
+subject: 105 - /ext/processed-subjects/3635
+running recon-all: 3635... from /ext/fs-subjects/3635/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 106 - /ext/processed-subjects/3636
+running recon-all: 3636... from /ext/fs-subjects/3636/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 107 - /ext/processed-subjects/3541
+running recon-all: 3541... from /ext/fs-subjects/3541/MPRAGEadni.nii
+done
+ 
+subject: 108 - /ext/processed-subjects/3637
+running recon-all: 3637... from /ext/fs-subjects/3637/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 109 - /ext/processed-subjects/3965
+running recon-all: 3965... from /ext/fs-subjects/3965/FSPGR_3D_SAG.nii
+done
+ 
+subject: 110 - /ext/processed-subjects/3966
+running recon-all: 3966... from /ext/fs-subjects/3966/FSPGR_3D_SAG.nii
+done
+stopped at iteration 110
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 110 - /ext/processed-subjects/3966
+running recon-all: 3966... from /ext/fs-subjects/3966/FSPGR_3D_SAG.nii
+done
+ 
+subject: 111 - /ext/processed-subjects/3967
+running recon-all: 3967... from /ext/fs-subjects/3967/FSPGR_3D_SAG.nii
+done
+ 
+subject: 112 - /ext/processed-subjects/3969
+running recon-all: 3969... from /ext/fs-subjects/3969/FSPGR_3D_SAG.nii
+done
+ 
+subject: 113 - /ext/processed-subjects/4107
+running recon-all: 4107... from /ext/fs-subjects/4107/sag_mprage.nii
+done
+ 
+subject: 114 - /ext/processed-subjects/4110
+running recon-all: 4110... from /ext/fs-subjects/4110/sag_mprage.nii
+done
+ 
+subject: 115 - /ext/processed-subjects/4113
+running recon-all: 4113... from /ext/fs-subjects/4113/sag_mprage.nii
+done
+ 
+subject: 116 - /ext/processed-subjects/3803
+running recon-all: 3803... from /ext/fs-subjects/3803/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 117 - /ext/processed-subjects/3086
+running recon-all: 3086... from /ext/fs-subjects/3086/SAG_3D_T1.nii
+done
+ 
+subject: 118 - /ext/processed-subjects/4076
+running recon-all: 4076... from /ext/fs-subjects/4076/SAG_3D_SPGR.nii
+done
+ 
+subject: 119 - /ext/processed-subjects/4078
+running recon-all: 4078... from /ext/fs-subjects/4078/SAG_3D_SPGR.nii
+done
+ 
+subject: 120 - /ext/processed-subjects/4115
+running recon-all: 4115... from /ext/fs-subjects/4115/sag_mprage.nii
+done
+stopped at iteration 120
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 1 - /ext/processed-subjects/3450
+running recon-all: 3450... from /ext/fs-subjects/3450/3D_SAG.nii
+done
+ 
+subject: 2 - /ext/processed-subjects/3451
+running recon-all: 3451... from /ext/fs-subjects/3451/3D_SAG.nii
+done
+ 
+subject: 3 - /ext/processed-subjects/3452
+running recon-all: 3452... from /ext/fs-subjects/3452/3D_SAG.nii
+done
+ 
+subject: 4 - /ext/processed-subjects/3453
+running recon-all: 3453... from /ext/fs-subjects/3453/3D_SAG.nii
+done
+ 
+subject: 5 - /ext/processed-subjects/3651
+running recon-all: 3651... from /ext/fs-subjects/3651/SAG_T1_3DMPRAGE.nii
+done
+ 
+subject: 6 - /ext/processed-subjects/3403
+running recon-all: 3403... from /ext/fs-subjects/3403/AX_DE_TSE.nii
+done
+ 
+subject: 7 - /ext/processed-subjects/3404
+running recon-all: 3404... from /ext/fs-subjects/3404/AX_DE_TSE.nii
+done
+ 
+subject: 8 - /ext/processed-subjects/3062
+running recon-all: 3062... from /ext/fs-subjects/3062/SAG_3D_T1.nii
+done
+ 
+subject: 9 - /ext/processed-subjects/3605
+running recon-all: 3605... from /ext/fs-subjects/3605/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 10 - /ext/processed-subjects/3102
+running recon-all: 3102... from /ext/fs-subjects/3102/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 10
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 10 - /ext/processed-subjects/3102
+running recon-all: 3102... from /ext/fs-subjects/3102/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 11 - /ext/processed-subjects/3104
+running recon-all: 3104... from /ext/fs-subjects/3104/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 12 - /ext/processed-subjects/3300
+running recon-all: 3300... from /ext/fs-subjects/3300/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 13 - /ext/processed-subjects/3301
+running recon-all: 3301... from /ext/fs-subjects/3301/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 14 - /ext/processed-subjects/3457
+running recon-all: 3457... from /ext/fs-subjects/3457/3D_SAG.nii
+done
+ 
+subject: 15 - /ext/processed-subjects/3600
+running recon-all: 3600... from /ext/fs-subjects/3600/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 16 - /ext/processed-subjects/3411
+running recon-all: 3411... from /ext/fs-subjects/3411/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 17 - /ext/processed-subjects/3414
+running recon-all: 3414... from /ext/fs-subjects/3414/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 18 - /ext/processed-subjects/3415
+running recon-all: 3415... from /ext/fs-subjects/3415/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 19 - /ext/processed-subjects/3004
+running recon-all: 3004... from /ext/fs-subjects/3004/sag_3D_FSPGR_BRAVO_straight.nii
+done
+ 
+subject: 20 - /ext/processed-subjects/3064
+running recon-all: 3064... from /ext/fs-subjects/3064/AX_DUAL_TSE.nii
+done
+stopped at iteration 20
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 20 - /ext/processed-subjects/3064
+running recon-all: 3064... from /ext/fs-subjects/3064/AX_DUAL_TSE.nii
+done
+ 
+subject: 21 - /ext/processed-subjects/3361
+running recon-all: 3361... from /ext/fs-subjects/3361/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 22 - /ext/processed-subjects/3406
+running recon-all: 3406... from /ext/fs-subjects/3406/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 23 - /ext/processed-subjects/3604
+running recon-all: 3604... from /ext/fs-subjects/3604/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 24 - /ext/processed-subjects/3608
+running recon-all: 3608... from /ext/fs-subjects/3608/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 25 - /ext/processed-subjects/3111
+running recon-all: 3111... from /ext/fs-subjects/3111/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 26 - /ext/processed-subjects/3156
+running recon-all: 3156... from /ext/fs-subjects/3156/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 27 - /ext/processed-subjects/3157
+running recon-all: 3157... from /ext/fs-subjects/3157/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 28 - /ext/processed-subjects/3165
+running recon-all: 3165... from /ext/fs-subjects/3165/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 29 - /ext/processed-subjects/3852
+running recon-all: 3852... from /ext/fs-subjects/3852/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 30 - /ext/processed-subjects/3854
+running recon-all: 3854... from /ext/fs-subjects/3854/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 30
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 30 - /ext/processed-subjects/3854
+running recon-all: 3854... from /ext/fs-subjects/3854/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 31 - /ext/processed-subjects/3855
+running recon-all: 3855... from /ext/fs-subjects/3855/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 32 - /ext/processed-subjects/3565
+running recon-all: 3565... from /ext/fs-subjects/3565/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 33 - /ext/processed-subjects/3350
+running recon-all: 3350... from /ext/fs-subjects/3350/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 34 - /ext/processed-subjects/3352
+running recon-all: 3352... from /ext/fs-subjects/3352/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 35 - /ext/processed-subjects/3353
+running recon-all: 3353... from /ext/fs-subjects/3353/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 36 - /ext/processed-subjects/3354
+running recon-all: 3354... from /ext/fs-subjects/3354/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 37 - /ext/processed-subjects/3357
+running recon-all: 3357... from /ext/fs-subjects/3357/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 38 - /ext/processed-subjects/3358
+running recon-all: 3358... from /ext/fs-subjects/3358/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 39 - /ext/processed-subjects/3359
+running recon-all: 3359... from /ext/fs-subjects/3359/MPRAGE_T1_SAG.nii
+done
+ 
+subject: 40 - /ext/processed-subjects/3114
+running recon-all: 3114... from /ext/fs-subjects/3114/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 40
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 40 - /ext/processed-subjects/3114
+running recon-all: 3114... from /ext/fs-subjects/3114/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 41 - /ext/processed-subjects/3367
+running recon-all: 3367... from /ext/fs-subjects/3367/MPRAGE_T1_SAG.nii
+done
+ 
+subject: 42 - /ext/processed-subjects/3072
+running recon-all: 3072... from /ext/fs-subjects/3072/SAG_3D_T1.nii
+done
+ 
+subject: 43 - /ext/processed-subjects/3270
+running recon-all: 3270... from /ext/fs-subjects/3270/SAG_FSPGR_3D.nii
+done
+ 
+subject: 44 - /ext/processed-subjects/3271
+running recon-all: 3271... from /ext/fs-subjects/3271/SAG_FSPGR_3D.nii
+done
+ 
+subject: 45 - /ext/processed-subjects/3517
+running recon-all: 3517... from /ext/fs-subjects/3517/MPRAGEadni.nii
+done
+ 
+subject: 46 - /ext/processed-subjects/3615
+running recon-all: 3615... from /ext/fs-subjects/3615/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 47 - /ext/processed-subjects/3464
+running recon-all: 3464... from /ext/fs-subjects/3464/3D_SAG.nii
+done
+ 
+subject: 48 - /ext/processed-subjects/3563
+running recon-all: 3563... from /ext/fs-subjects/3563/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 49 - /ext/processed-subjects/3805
+running recon-all: 3805... from /ext/fs-subjects/3805/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 50 - /ext/processed-subjects/3807
+running recon-all: 3807... from /ext/fs-subjects/3807/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 50
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 50 - /ext/processed-subjects/3807
+running recon-all: 3807... from /ext/fs-subjects/3807/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 51 - /ext/processed-subjects/3811
+running recon-all: 3811... from /ext/fs-subjects/3811/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 52 - /ext/processed-subjects/3812
+running recon-all: 3812... from /ext/fs-subjects/3812/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 53 - /ext/processed-subjects/3073
+running recon-all: 3073... from /ext/fs-subjects/3073/SAG_3D_T1.nii
+done
+ 
+subject: 54 - /ext/processed-subjects/3277
+running recon-all: 3277... from /ext/fs-subjects/3277/SAG_FSPGR_3D.nii
+done
+ 
+subject: 55 - /ext/processed-subjects/3074
+running recon-all: 3074... from /ext/fs-subjects/3074/SAG_3D_T1.nii
+done
+ 
+subject: 56 - /ext/processed-subjects/3619
+running recon-all: 3619... from /ext/fs-subjects/3619/SAG_SPGR_3D.nii
+done
+ 
+subject: 57 - /ext/processed-subjects/3620
+running recon-all: 3620... from /ext/fs-subjects/3620/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 58 - /ext/processed-subjects/3172
+running recon-all: 3172... from /ext/fs-subjects/3172/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 59 - /ext/processed-subjects/3310
+running recon-all: 3310... from /ext/fs-subjects/3310/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 60 - /ext/processed-subjects/3759
+running recon-all: 3759... from /ext/fs-subjects/3759/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 60
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 60 - /ext/processed-subjects/3759
+running recon-all: 3759... from /ext/fs-subjects/3759/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 61 - /ext/processed-subjects/3219
+running recon-all: 3219... from /ext/fs-subjects/3219/AX_T1.nii
+done
+ 
+subject: 62 - /ext/processed-subjects/3221
+running recon-all: 3221... from /ext/fs-subjects/3221/axial_spgr.nii
+done
+ 
+subject: 63 - /ext/processed-subjects/3222
+running recon-all: 3222... from /ext/fs-subjects/3222/axial_spgr.nii
+done
+ 
+subject: 64 - /ext/processed-subjects/3527
+running recon-all: 3527... from /ext/fs-subjects/3527/MPRAGEadni.nii
+done
+ 
+subject: 65 - /ext/processed-subjects/3952
+running recon-all: 3952... from /ext/fs-subjects/3952/FSPGR_3D_SAG.nii
+done
+ 
+subject: 66 - /ext/processed-subjects/3076
+running recon-all: 3076... from /ext/fs-subjects/3076/AX_DUAL_TSE.nii
+done
+ 
+subject: 67 - /ext/processed-subjects/3468
+running recon-all: 3468... from /ext/fs-subjects/3468/3D_SAG.nii
+done
+ 
+subject: 68 - /ext/processed-subjects/3624
+running recon-all: 3624... from /ext/fs-subjects/3624/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 69 - /ext/processed-subjects/3572
+running recon-all: 3572... from /ext/fs-subjects/3572/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 70 - /ext/processed-subjects/3765
+running recon-all: 3765... from /ext/fs-subjects/3765/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 70
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 70 - /ext/processed-subjects/3765
+running recon-all: 3765... from /ext/fs-subjects/3765/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 71 - /ext/processed-subjects/3767
+running recon-all: 3767... from /ext/fs-subjects/3767/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 72 - /ext/processed-subjects/4010
+running recon-all: 4010... from /ext/fs-subjects/4010/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 73 - /ext/processed-subjects/3625
+running recon-all: 3625... from /ext/fs-subjects/3625/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 74 - /ext/processed-subjects/3374
+running recon-all: 3374... from /ext/fs-subjects/3374/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 75 - /ext/processed-subjects/3176
+running recon-all: 3176... from /ext/fs-subjects/3176/SAG_MPRAGE_GRAPPA.nii
+done
+ 
+subject: 76 - /ext/processed-subjects/3016
+running recon-all: 3016... from /ext/fs-subjects/3016/sag_3D_FSPGR_BRAVO_straight.nii
+done
+ 
+subject: 77 - /ext/processed-subjects/3466
+running recon-all: 3466... from /ext/fs-subjects/3466/3D_SAG.nii
+done
+ 
+subject: 78 - /ext/processed-subjects/3373
+running recon-all: 3373... from /ext/fs-subjects/3373/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 79 - /ext/processed-subjects/4022
+running recon-all: 4022... from /ext/fs-subjects/4022/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 80 - /ext/processed-subjects/3325
+running recon-all: 3325... from /ext/fs-subjects/3325/SAG_MPRAGE_GRAPPA.nii
+done
+stopped at iteration 80
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 80 - /ext/processed-subjects/3325
+running recon-all: 3325... from /ext/fs-subjects/3325/SAG_MPRAGE_GRAPPA.nii
+done
+ 
+subject: 81 - /ext/processed-subjects/3587
+running recon-all: 3587... from /ext/fs-subjects/3587/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 82 - /ext/processed-subjects/3817
+running recon-all: 3817... from /ext/fs-subjects/3817/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 83 - /ext/processed-subjects/3827
+running recon-all: 3827... from /ext/fs-subjects/3827/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 84 - /ext/processed-subjects/3410
+running recon-all: 3410... from /ext/fs-subjects/3410/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 85 - /ext/processed-subjects/3430
+running recon-all: 3430... from /ext/fs-subjects/3430/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 86 - /ext/processed-subjects/3383
+running recon-all: 3383... from /ext/fs-subjects/3383/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 87 - /ext/processed-subjects/3627
+running recon-all: 3627... from /ext/fs-subjects/3627/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 88 - /ext/processed-subjects/3629
+running recon-all: 3629... from /ext/fs-subjects/3629/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 89 - /ext/processed-subjects/4051
+running recon-all: 4051... from /ext/fs-subjects/4051/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 90 - /ext/processed-subjects/3385
+running recon-all: 3385... from /ext/fs-subjects/3385/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 90
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 90 - /ext/processed-subjects/3385
+running recon-all: 3385... from /ext/fs-subjects/3385/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 91 - /ext/processed-subjects/3750
+running recon-all: 3750... from /ext/fs-subjects/3750/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 92 - /ext/processed-subjects/4059
+running recon-all: 4059... from /ext/fs-subjects/4059/sag_mprage.nii
+done
+ 
+subject: 93 - /ext/processed-subjects/4090
+running recon-all: 4090... from /ext/fs-subjects/4090/sag_mprage.nii
+done
+ 
+subject: 94 - /ext/processed-subjects/4092
+running recon-all: 4092... from /ext/fs-subjects/4092/sag_mprage.nii
+done
+ 
+subject: 95 - /ext/processed-subjects/4099
+running recon-all: 4099... from /ext/fs-subjects/4099/sag_mprage.nii
+done
+ 
+subject: 96 - /ext/processed-subjects/4100
+running recon-all: 4100... from /ext/fs-subjects/4100/sag_mprage.nii
+done
+ 
+subject: 97 - /ext/processed-subjects/4101
+running recon-all: 4101... from /ext/fs-subjects/4101/sag_mprage.nii
+done
+ 
+subject: 98 - /ext/processed-subjects/4102
+running recon-all: 4102... from /ext/fs-subjects/4102/sag_mprage.nii
+done
+ 
+subject: 99 - /ext/processed-subjects/4103
+running recon-all: 4103... from /ext/fs-subjects/4103/sag_mprage.nii
+done
+ 
+subject: 100 - /ext/processed-subjects/4030
+running recon-all: 4030... from /ext/fs-subjects/4030/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 100
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 100 - /ext/processed-subjects/4030
+running recon-all: 4030... from /ext/fs-subjects/4030/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 101 - /ext/processed-subjects/4067
+running recon-all: 4067... from /ext/fs-subjects/4067/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 102 - /ext/processed-subjects/3387
+running recon-all: 3387... from /ext/fs-subjects/3387/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 103 - /ext/processed-subjects/3479
+running recon-all: 3479... from /ext/fs-subjects/3479/3D_SAG.nii
+done
+ 
+subject: 104 - /ext/processed-subjects/3481
+running recon-all: 3481... from /ext/fs-subjects/3481/3D_SAG.nii
+done
+ 
+subject: 105 - /ext/processed-subjects/3635
+running recon-all: 3635... from /ext/fs-subjects/3635/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 106 - /ext/processed-subjects/3636
+running recon-all: 3636... from /ext/fs-subjects/3636/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 107 - /ext/processed-subjects/3541
+running recon-all: 3541... from /ext/fs-subjects/3541/MPRAGEadni.nii
+done
+ 
+subject: 108 - /ext/processed-subjects/3637
+running recon-all: 3637... from /ext/fs-subjects/3637/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 109 - /ext/processed-subjects/3965
+running recon-all: 3965... from /ext/fs-subjects/3965/FSPGR_3D_SAG.nii
+done
+ 
+subject: 110 - /ext/processed-subjects/3966
+running recon-all: 3966... from /ext/fs-subjects/3966/FSPGR_3D_SAG.nii
+done
+stopped at iteration 110
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 110 - /ext/processed-subjects/3966
+running recon-all: 3966... from /ext/fs-subjects/3966/FSPGR_3D_SAG.nii
+done
+ 
+subject: 111 - /ext/processed-subjects/3967
+running recon-all: 3967... from /ext/fs-subjects/3967/FSPGR_3D_SAG.nii
+done
+ 
+subject: 112 - /ext/processed-subjects/3969
+running recon-all: 3969... from /ext/fs-subjects/3969/FSPGR_3D_SAG.nii
+done
+ 
+subject: 113 - /ext/processed-subjects/4107
+running recon-all: 4107... from /ext/fs-subjects/4107/sag_mprage.nii
+done
+ 
+subject: 114 - /ext/processed-subjects/4110
+running recon-all: 4110... from /ext/fs-subjects/4110/sag_mprage.nii
+done
+ 
+subject: 115 - /ext/processed-subjects/4113
+running recon-all: 4113... from /ext/fs-subjects/4113/sag_mprage.nii
+done
+ 
+subject: 116 - /ext/processed-subjects/3803
+running recon-all: 3803... from /ext/fs-subjects/3803/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 117 - /ext/processed-subjects/3086
+running recon-all: 3086... from /ext/fs-subjects/3086/SAG_3D_T1.nii
+done
+ 
+subject: 118 - /ext/processed-subjects/4076
+running recon-all: 4076... from /ext/fs-subjects/4076/SAG_3D_SPGR.nii
+done
+ 
+subject: 119 - /ext/processed-subjects/4078
+running recon-all: 4078... from /ext/fs-subjects/4078/SAG_3D_SPGR.nii
+done
+ 
+subject: 120 - /ext/processed-subjects/4115
+running recon-all: 4115... from /ext/fs-subjects/4115/sag_mprage.nii
+done
+stopped at iteration 120
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 1 - /ext/processed-subjects/3450
+running recon-all: 3450... from /ext/fs-subjects/3450/3D_SAG.nii
+done
+ 
+subject: 2 - /ext/processed-subjects/3451
+running recon-all: 3451... from /ext/fs-subjects/3451/3D_SAG.nii
+done
+ 
+subject: 3 - /ext/processed-subjects/3452
+running recon-all: 3452... from /ext/fs-subjects/3452/3D_SAG.nii
+done
+ 
+subject: 4 - /ext/processed-subjects/3453
+running recon-all: 3453... from /ext/fs-subjects/3453/3D_SAG.nii
+done
+ 
+subject: 5 - /ext/processed-subjects/3651
+running recon-all: 3651... from /ext/fs-subjects/3651/SAG_T1_3DMPRAGE.nii
+done
+ 
+subject: 6 - /ext/processed-subjects/3403
+running recon-all: 3403... from /ext/fs-subjects/3403/AX_DE_TSE.nii
+done
+ 
+subject: 7 - /ext/processed-subjects/3404
+running recon-all: 3404... from /ext/fs-subjects/3404/AX_DE_TSE.nii
+done
+ 
+subject: 8 - /ext/processed-subjects/3062
+running recon-all: 3062... from /ext/fs-subjects/3062/SAG_3D_T1.nii
+done
+ 
+subject: 9 - /ext/processed-subjects/3605
+running recon-all: 3605... from /ext/fs-subjects/3605/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 10 - /ext/processed-subjects/3102
+running recon-all: 3102... from /ext/fs-subjects/3102/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 10
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 10 - /ext/processed-subjects/3102
+running recon-all: 3102... from /ext/fs-subjects/3102/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 11 - /ext/processed-subjects/3104
+running recon-all: 3104... from /ext/fs-subjects/3104/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 12 - /ext/processed-subjects/3300
+running recon-all: 3300... from /ext/fs-subjects/3300/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 13 - /ext/processed-subjects/3301
+running recon-all: 3301... from /ext/fs-subjects/3301/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 14 - /ext/processed-subjects/3457
+running recon-all: 3457... from /ext/fs-subjects/3457/3D_SAG.nii
+done
+ 
+subject: 15 - /ext/processed-subjects/3600
+running recon-all: 3600... from /ext/fs-subjects/3600/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 16 - /ext/processed-subjects/3411
+running recon-all: 3411... from /ext/fs-subjects/3411/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 17 - /ext/processed-subjects/3414
+running recon-all: 3414... from /ext/fs-subjects/3414/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 18 - /ext/processed-subjects/3415
+running recon-all: 3415... from /ext/fs-subjects/3415/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 19 - /ext/processed-subjects/3004
+running recon-all: 3004... from /ext/fs-subjects/3004/sag_3D_FSPGR_BRAVO_straight.nii
+done
+ 
+subject: 20 - /ext/processed-subjects/3064
+running recon-all: 3064... from /ext/fs-subjects/3064/AX_DUAL_TSE.nii
+done
+stopped at iteration 20
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 20 - /ext/processed-subjects/3064
+running recon-all: 3064... from /ext/fs-subjects/3064/AX_DUAL_TSE.nii
+done
+ 
+subject: 21 - /ext/processed-subjects/3361
+running recon-all: 3361... from /ext/fs-subjects/3361/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 22 - /ext/processed-subjects/3406
+running recon-all: 3406... from /ext/fs-subjects/3406/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 23 - /ext/processed-subjects/3604
+running recon-all: 3604... from /ext/fs-subjects/3604/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 24 - /ext/processed-subjects/3608
+running recon-all: 3608... from /ext/fs-subjects/3608/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 25 - /ext/processed-subjects/3111
+running recon-all: 3111... from /ext/fs-subjects/3111/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 26 - /ext/processed-subjects/3156
+running recon-all: 3156... from /ext/fs-subjects/3156/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 27 - /ext/processed-subjects/3157
+running recon-all: 3157... from /ext/fs-subjects/3157/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 28 - /ext/processed-subjects/3165
+running recon-all: 3165... from /ext/fs-subjects/3165/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 29 - /ext/processed-subjects/3852
+running recon-all: 3852... from /ext/fs-subjects/3852/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 30 - /ext/processed-subjects/3854
+running recon-all: 3854... from /ext/fs-subjects/3854/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 30
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 30 - /ext/processed-subjects/3854
+running recon-all: 3854... from /ext/fs-subjects/3854/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 31 - /ext/processed-subjects/3855
+running recon-all: 3855... from /ext/fs-subjects/3855/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 32 - /ext/processed-subjects/3565
+running recon-all: 3565... from /ext/fs-subjects/3565/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 33 - /ext/processed-subjects/3350
+running recon-all: 3350... from /ext/fs-subjects/3350/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 34 - /ext/processed-subjects/3352
+running recon-all: 3352... from /ext/fs-subjects/3352/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 35 - /ext/processed-subjects/3353
+running recon-all: 3353... from /ext/fs-subjects/3353/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 36 - /ext/processed-subjects/3354
+running recon-all: 3354... from /ext/fs-subjects/3354/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 37 - /ext/processed-subjects/3357
+running recon-all: 3357... from /ext/fs-subjects/3357/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 38 - /ext/processed-subjects/3358
+running recon-all: 3358... from /ext/fs-subjects/3358/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 39 - /ext/processed-subjects/3359
+running recon-all: 3359... from /ext/fs-subjects/3359/MPRAGE_T1_SAG.nii
+done
+ 
+subject: 40 - /ext/processed-subjects/3114
+running recon-all: 3114... from /ext/fs-subjects/3114/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 40
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 40 - /ext/processed-subjects/3114
+running recon-all: 3114... from /ext/fs-subjects/3114/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 41 - /ext/processed-subjects/3367
+running recon-all: 3367... from /ext/fs-subjects/3367/MPRAGE_T1_SAG.nii
+done
+ 
+subject: 42 - /ext/processed-subjects/3072
+running recon-all: 3072... from /ext/fs-subjects/3072/SAG_3D_T1.nii
+done
+ 
+subject: 43 - /ext/processed-subjects/3270
+running recon-all: 3270... from /ext/fs-subjects/3270/SAG_FSPGR_3D.nii
+done
+ 
+subject: 44 - /ext/processed-subjects/3271
+running recon-all: 3271... from /ext/fs-subjects/3271/SAG_FSPGR_3D.nii
+done
+ 
+subject: 45 - /ext/processed-subjects/3517
+running recon-all: 3517... from /ext/fs-subjects/3517/MPRAGEadni.nii
+done
+ 
+subject: 46 - /ext/processed-subjects/3615
+running recon-all: 3615... from /ext/fs-subjects/3615/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 47 - /ext/processed-subjects/3464
+running recon-all: 3464... from /ext/fs-subjects/3464/3D_SAG.nii
+done
+ 
+subject: 48 - /ext/processed-subjects/3563
+running recon-all: 3563... from /ext/fs-subjects/3563/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 49 - /ext/processed-subjects/3805
+running recon-all: 3805... from /ext/fs-subjects/3805/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 50 - /ext/processed-subjects/3807
+running recon-all: 3807... from /ext/fs-subjects/3807/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 50
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 50 - /ext/processed-subjects/3807
+running recon-all: 3807... from /ext/fs-subjects/3807/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 51 - /ext/processed-subjects/3811
+running recon-all: 3811... from /ext/fs-subjects/3811/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 52 - /ext/processed-subjects/3812
+running recon-all: 3812... from /ext/fs-subjects/3812/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 53 - /ext/processed-subjects/3073
+running recon-all: 3073... from /ext/fs-subjects/3073/SAG_3D_T1.nii
+done
+ 
+subject: 54 - /ext/processed-subjects/3277
+running recon-all: 3277... from /ext/fs-subjects/3277/SAG_FSPGR_3D.nii
+done
+ 
+subject: 55 - /ext/processed-subjects/3074
+running recon-all: 3074... from /ext/fs-subjects/3074/SAG_3D_T1.nii
+done
+ 
+subject: 56 - /ext/processed-subjects/3619
+running recon-all: 3619... from /ext/fs-subjects/3619/SAG_SPGR_3D.nii
+done
+ 
+subject: 57 - /ext/processed-subjects/3620
+running recon-all: 3620... from /ext/fs-subjects/3620/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 58 - /ext/processed-subjects/3172
+running recon-all: 3172... from /ext/fs-subjects/3172/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 59 - /ext/processed-subjects/3310
+running recon-all: 3310... from /ext/fs-subjects/3310/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 60 - /ext/processed-subjects/3759
+running recon-all: 3759... from /ext/fs-subjects/3759/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 60
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 60 - /ext/processed-subjects/3759
+running recon-all: 3759... from /ext/fs-subjects/3759/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 61 - /ext/processed-subjects/3219
+running recon-all: 3219... from /ext/fs-subjects/3219/AX_T1.nii
+done
+ 
+subject: 62 - /ext/processed-subjects/3221
+running recon-all: 3221... from /ext/fs-subjects/3221/axial_spgr.nii
+done
+ 
+subject: 63 - /ext/processed-subjects/3222
+running recon-all: 3222... from /ext/fs-subjects/3222/axial_spgr.nii
+done
+ 
+subject: 64 - /ext/processed-subjects/3527
+running recon-all: 3527... from /ext/fs-subjects/3527/MPRAGEadni.nii
+done
+ 
+subject: 65 - /ext/processed-subjects/3952
+running recon-all: 3952... from /ext/fs-subjects/3952/FSPGR_3D_SAG.nii
+done
+ 
+subject: 66 - /ext/processed-subjects/3076
+running recon-all: 3076... from /ext/fs-subjects/3076/AX_DUAL_TSE.nii
+done
+ 
+subject: 67 - /ext/processed-subjects/3468
+running recon-all: 3468... from /ext/fs-subjects/3468/3D_SAG.nii
+done
+ 
+subject: 68 - /ext/processed-subjects/3624
+running recon-all: 3624... from /ext/fs-subjects/3624/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 69 - /ext/processed-subjects/3572
+running recon-all: 3572... from /ext/fs-subjects/3572/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 70 - /ext/processed-subjects/3765
+running recon-all: 3765... from /ext/fs-subjects/3765/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 70
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 70 - /ext/processed-subjects/3765
+running recon-all: 3765... from /ext/fs-subjects/3765/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 71 - /ext/processed-subjects/3767
+running recon-all: 3767... from /ext/fs-subjects/3767/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 72 - /ext/processed-subjects/4010
+running recon-all: 4010... from /ext/fs-subjects/4010/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 73 - /ext/processed-subjects/3625
+running recon-all: 3625... from /ext/fs-subjects/3625/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 74 - /ext/processed-subjects/3374
+running recon-all: 3374... from /ext/fs-subjects/3374/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 75 - /ext/processed-subjects/3176
+running recon-all: 3176... from /ext/fs-subjects/3176/SAG_MPRAGE_GRAPPA.nii
+done
+ 
+subject: 76 - /ext/processed-subjects/3016
+running recon-all: 3016... from /ext/fs-subjects/3016/sag_3D_FSPGR_BRAVO_straight.nii
+done
+ 
+subject: 77 - /ext/processed-subjects/3466
+running recon-all: 3466... from /ext/fs-subjects/3466/3D_SAG.nii
+done
+ 
+subject: 78 - /ext/processed-subjects/3373
+running recon-all: 3373... from /ext/fs-subjects/3373/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 79 - /ext/processed-subjects/4022
+running recon-all: 4022... from /ext/fs-subjects/4022/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 80 - /ext/processed-subjects/3325
+running recon-all: 3325... from /ext/fs-subjects/3325/SAG_MPRAGE_GRAPPA.nii
+done
+stopped at iteration 80
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 80 - /ext/processed-subjects/3325
+running recon-all: 3325... from /ext/fs-subjects/3325/SAG_MPRAGE_GRAPPA.nii
+done
+ 
+subject: 81 - /ext/processed-subjects/3587
+running recon-all: 3587... from /ext/fs-subjects/3587/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 82 - /ext/processed-subjects/3817
+running recon-all: 3817... from /ext/fs-subjects/3817/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 83 - /ext/processed-subjects/3827
+running recon-all: 3827... from /ext/fs-subjects/3827/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 84 - /ext/processed-subjects/3410
+running recon-all: 3410... from /ext/fs-subjects/3410/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 85 - /ext/processed-subjects/3430
+running recon-all: 3430... from /ext/fs-subjects/3430/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 86 - /ext/processed-subjects/3383
+running recon-all: 3383... from /ext/fs-subjects/3383/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 87 - /ext/processed-subjects/3627
+running recon-all: 3627... from /ext/fs-subjects/3627/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 88 - /ext/processed-subjects/3629
+running recon-all: 3629... from /ext/fs-subjects/3629/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 89 - /ext/processed-subjects/4051
+running recon-all: 4051... from /ext/fs-subjects/4051/SAG_T1_3D_FSPGR.nii
+done
+ 
+subject: 90 - /ext/processed-subjects/3385
+running recon-all: 3385... from /ext/fs-subjects/3385/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 90
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 90 - /ext/processed-subjects/3385
+running recon-all: 3385... from /ext/fs-subjects/3385/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 91 - /ext/processed-subjects/3750
+running recon-all: 3750... from /ext/fs-subjects/3750/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 92 - /ext/processed-subjects/4059
+running recon-all: 4059... from /ext/fs-subjects/4059/sag_mprage.nii
+done
+ 
+subject: 93 - /ext/processed-subjects/4090
+running recon-all: 4090... from /ext/fs-subjects/4090/sag_mprage.nii
+done
+ 
+subject: 94 - /ext/processed-subjects/4092
+running recon-all: 4092... from /ext/fs-subjects/4092/sag_mprage.nii
+done
+ 
+subject: 95 - /ext/processed-subjects/4099
+running recon-all: 4099... from /ext/fs-subjects/4099/sag_mprage.nii
+done
+ 
+subject: 96 - /ext/processed-subjects/4100
+running recon-all: 4100... from /ext/fs-subjects/4100/sag_mprage.nii
+done
+ 
+subject: 97 - /ext/processed-subjects/4101
+running recon-all: 4101... from /ext/fs-subjects/4101/sag_mprage.nii
+done
+ 
+subject: 98 - /ext/processed-subjects/4102
+running recon-all: 4102... from /ext/fs-subjects/4102/sag_mprage.nii
+done
+ 
+subject: 99 - /ext/processed-subjects/4103
+running recon-all: 4103... from /ext/fs-subjects/4103/sag_mprage.nii
+done
+ 
+subject: 100 - /ext/processed-subjects/4030
+running recon-all: 4030... from /ext/fs-subjects/4030/MPRAGE_GRAPPA.nii
+done
+stopped at iteration 100
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 100 - /ext/processed-subjects/4030
+running recon-all: 4030... from /ext/fs-subjects/4030/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 101 - /ext/processed-subjects/4067
+running recon-all: 4067... from /ext/fs-subjects/4067/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 102 - /ext/processed-subjects/3387
+running recon-all: 3387... from /ext/fs-subjects/3387/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 103 - /ext/processed-subjects/3479
+running recon-all: 3479... from /ext/fs-subjects/3479/3D_SAG.nii
+done
+ 
+subject: 104 - /ext/processed-subjects/3481
+running recon-all: 3481... from /ext/fs-subjects/3481/3D_SAG.nii
+done
+ 
+subject: 105 - /ext/processed-subjects/3635
+running recon-all: 3635... from /ext/fs-subjects/3635/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 106 - /ext/processed-subjects/3636
+running recon-all: 3636... from /ext/fs-subjects/3636/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 107 - /ext/processed-subjects/3541
+running recon-all: 3541... from /ext/fs-subjects/3541/MPRAGEadni.nii
+done
+ 
+subject: 108 - /ext/processed-subjects/3637
+running recon-all: 3637... from /ext/fs-subjects/3637/SAG_T1_3D_MPRAGE.nii
+done
+ 
+subject: 109 - /ext/processed-subjects/3965
+running recon-all: 3965... from /ext/fs-subjects/3965/FSPGR_3D_SAG.nii
+done
+ 
+subject: 110 - /ext/processed-subjects/3966
+running recon-all: 3966... from /ext/fs-subjects/3966/FSPGR_3D_SAG.nii
+done
+stopped at iteration 110
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 110 - /ext/processed-subjects/3966
+running recon-all: 3966... from /ext/fs-subjects/3966/FSPGR_3D_SAG.nii
+done
+ 
+subject: 111 - /ext/processed-subjects/3967
+running recon-all: 3967... from /ext/fs-subjects/3967/FSPGR_3D_SAG.nii
+done
+ 
+subject: 112 - /ext/processed-subjects/3969
+running recon-all: 3969... from /ext/fs-subjects/3969/FSPGR_3D_SAG.nii
+done
+ 
+subject: 113 - /ext/processed-subjects/4107
+running recon-all: 4107... from /ext/fs-subjects/4107/sag_mprage.nii
+done
+ 
+subject: 114 - /ext/processed-subjects/4110
+running recon-all: 4110... from /ext/fs-subjects/4110/sag_mprage.nii
+done
+ 
+subject: 115 - /ext/processed-subjects/4113
+running recon-all: 4113... from /ext/fs-subjects/4113/sag_mprage.nii
+done
+ 
+subject: 116 - /ext/processed-subjects/3803
+running recon-all: 3803... from /ext/fs-subjects/3803/MPRAGE_GRAPPA.nii
+done
+ 
+subject: 117 - /ext/processed-subjects/3086
+running recon-all: 3086... from /ext/fs-subjects/3086/SAG_3D_T1.nii
+done
+ 
+subject: 118 - /ext/processed-subjects/4076
+running recon-all: 4076... from /ext/fs-subjects/4076/SAG_3D_SPGR.nii
+done
+ 
+subject: 119 - /ext/processed-subjects/4078
+running recon-all: 4078... from /ext/fs-subjects/4078/SAG_3D_SPGR.nii
+done
+ 
+subject: 120 - /ext/processed-subjects/4115
+running recon-all: 4115... from /ext/fs-subjects/4115/sag_mprage.nii
+done
+stopped at iteration 120
+INFO: /root/matlab/startup.m does not exist ... creating
+ 
+subject: 1 - /ext/processed-subjects/3450
+running recon-all: 3450... from /ext/fs-subjects/3450/3D_SAG.nii
+done
+ 
+subject: 2 - /ext/processed-subjects/3451
+running recon-all: 3451... from /ext/fs-subjects/3451/3D_SAG.nii
+done
+ 
+subject: 3 - /ext/processed-subjects/3452
+running recon-all: 3452... from /ext/fs-subjects/3452/3D_SAG.nii
+done
+ 
+subject: 4 - /ext/processed-subjects/3453
+running recon-all: 3453... from /ext/fs-subjects/3453/3D_SAG.nii

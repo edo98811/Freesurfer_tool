@@ -34,7 +34,8 @@ reconall() {
       
       # recon-all -all -s $destination_filename -i $nii_volume -no-isrunning 
       # recon-all -autorecon2-wm  -s $destination_filename -i $nii_volume -no-isrunning -nofix
-      echo "recon-all -all -s $destination_filename -i $nii_volume -no-isrunning " > $SUBJECTS_DIR/$destination_filename/result.txt
+      echo "recon-all -all -s $destination_filename -i $nii_volume -no-isrunning " # > $SUBJECTS_DIR/$destination_filename.txt
+      sleep 1
 
       echo "done"
       
@@ -72,7 +73,7 @@ samseg() {
       echo "run_samseg --input $t1 $VOLUMES_DIR/$t2_flair  --pallidum-separate"
       echo "--output $SUBJECTS_DIR/$folder --threads 8"
       
-      # run_samseg --input "$t1" "$t2_flair"  --pallidum-separate --output "$SUBJECTS_DIR/$folder" --lesion --threads 8 # > /dev/null
+      echo "run_samseg --input "$t1" "$t2_flair"  --pallidum-separate --output "$SUBJECTS_DIR/$folder" --lesion --threads 8" # > /dev/null
 
       
       echo "done"
