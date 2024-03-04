@@ -34,7 +34,8 @@ def _remove_spaces(data_path: str) -> None:
 # Data preparation 
 class Prepare():
   def __init__(self, SET):
-    self.df = pd.read_excel(os.path.join(SET["table_path"], SET["table_name"]))
+    # self.df = pd.read_excel(os.path.join(SET["table_path"], SET["table_name"]))
+    self.df = ""
 
   def prepare_for_conversion(self, cols=["mris"], last=False)-> None:
     
@@ -109,22 +110,3 @@ class Prepare():
         source_docker_destination_path.append(f"{row['acquisition']}")
     
     _save_files(source_docker_origin_path, source_docker_destination_path) 
-
-  def prepare_for_tables(self)-> None:
-
-    subjects = []
-
-    for _, row in self.df.iterrows():
-
-      if (row['subject'].startswith("02") or row['subject'].startswith("03")):
-        # t1_column = eval(row["t1"])
-        
-        if row["hippocampal_done_correctly"] == "Yes" and row["reconall_done_correctly"] == "Yes": # and row["samseg_done"] == "Yes": # and row["thalamus_done_correctly"] == "Yes":
-
-            subject = f"{row['subject']}_{row['acquisition']}"
-            subjects.append(subject)
-
-    # all_subjects = " ".join(subjects)
-    with open("subjects.txt", "w") as fp:
-      for item in subjects:
-        fp.write(f"{item}\n")

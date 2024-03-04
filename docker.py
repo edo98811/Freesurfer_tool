@@ -2,7 +2,6 @@ import subprocess
 import datetime 
 import helper_functions as h
 
-SET = h.load_settings("settings.json")
 
 class DockerInstance():
     def __init__(self, SET, source, destination):
@@ -41,7 +40,7 @@ class DockerInstance():
                 "docker", "run", "--rm", "--name", f"edoardo_freesurfer_{max_number}",
                 "-v", f"{SET["base_path"]}/license.txt:/license.txt:ro",
                 "-v", f"{SET["base_path"]}/freesurfer_all.sh:/root/freesurfer.sh",
-                "-v", f"{SET["base_path"]}:{SET["base_path"]}:ro",
+                "-v", f"{SET["app_path"]}:{SET["app_path"]}:ro",
                 "-v", f"{SET[self.source]}:",
                 "-v", f"{SET[self.destination]}:",
                 "-e", "FS_LICENSE=license.txt",

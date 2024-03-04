@@ -5,30 +5,27 @@ import secrets
 import json 
 import helper_functions as h
 
-SET = h.load_settings("settings.json")
 class Table():
   def __init__(self, SET):
     self.SET = SET
     self.table = self.create_mris_table()
 
   def create_mris_table(self):
-      self.table = self.create_table_df(os.path.join(SET["base_path"], SET["dicom_path"]))
+      self.table = self.create_table_df(os.path.join(self.SET["base_path"], self.SET["dicom_path"]))
       
       self.create_subj_info()
-      self.add_processing_info(os.path.join(SET["base_path"], SET["reconall_path"]), os.path.join(SET["base_path"], SET["samseg_path"]), os.path.join(SET["base_path"], SET["nifti_path"]))
+      self.add_processing_info(os.path.join(self.SET["base_path"], self.SET["reconall_path"]), os.path.join(self.SET["base_path"], self.SET["samseg_path"]), os.path.join(self.SET["base_path"], self.SET["nifti_path"]))
 
-      self.writer_to_excel(os.path.join(SET["table_path"], SET["table_name"]))
       
-
   def update_mris_table(self, df_path: str):
 
     self.table = pd.read_excel(df_path)
 
     self.create_subj_info()
-    self.add_processing_info(os.path.join(SET["base_path"], SET["reconall_path"]), os.path.join(SET["base_path"], SET["samseg_path"]), os.path.join(SET["base_path"], SET["nifti_path"]))
+    self.add_processing_info(os.path.join(self.SET["base_path"], self.SET["reconall_path"]), os.path.join(self.SET["base_path"], self.SET["samseg_path"]), os.path.join(self.SET["base_path"], self.SET["nifti_path"]))
 
-    self.writer_to_excel(os.path.join(SET["table_path"], SET["table_name"]))
 
+# to delete the return value
   def create_table_df(self, base_directory: str):
       
       data = {
@@ -78,21 +75,21 @@ class Table():
     
     for rowname, row in self.table.iterrows():
       for mri in row["mris"]:
-        if not any(MRI_name_substring in mri for MRI_name_substring in SET["file_identifiers"]["T1"]) and not any(MRI_name_substring in mri for MRI_name_substring in SET["file_identifiers"]["T1_no"]):
+        if not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1_no"]):
             self.table.at[rowname, "t1"].append(mri)
 
     self.table["t2"] = [list() for _ in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
       for mri in row["mris"]:
-        if not any(MRI_name_substring in mri for MRI_name_substring in SET["file_identifiers"]["T2"]) and not any(MRI_name_substring in mri for MRI_name_substring in SET["file_identifiers"]["T2_no"]):
+        if not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T2"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T2_no"]):
             self.table.at[rowname, "t2"].append(mri)
 
     self.table["flair"] = [list() for _ in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
       for mri in row["mris"]:
-        if not any(MRI_name_substring in mri for MRI_name_substring in SET["file_identifiers"]["FLAIR"]) and not any(MRI_name_substring in mri for MRI_name_substring in SET["file_identifiers"]["FLAIR_no"]):
+        if not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["FLAIR"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["FLAIR_no"]):
           self.table.at[rowname, "flair"].append(mri)
     
     self.table["samseg"] = ["Not possible" for x in range(len(self.table.index))]
@@ -146,7 +143,9 @@ class Table():
           print(f"{os.path.join(search_path_data, f"{row['acquisition']}", f"{mri}.nii")} does not exist")
           self.table.at[index, "converted"].append(False)
 
-  def writer_to_excel(self, excel_filename, sheet_name="subjects"):
+  def save_to_excel(self, sheet_name="subjects"):
+
+      excel_filename = os.path.join(self.SET["table_path"], self.SET["table_name"])
       # Create a Pandas Excel writer using the XlsxWriter engine
       writer = pd.ExcelWriter(excel_filename, engine='xlsxwriter')
 
