@@ -1,79 +1,486 @@
 INFO: /root/matlab/startup.m does not exist ... creating
  
-subject: 30 - 3854
-running samseg: /ext/processed-subjects/3854...
-run_samseg --input /ext/fs-subjects/3854/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3854/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3854 --threads 8
-run_samseg --input /ext/fs-subjects/3854/MPRAGE_GRAPPA.nii /ext/fs-subjects/3854/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3854 --lesion --threads 8
-done
+subject: 8 - /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058
+fs-check-version --s 02_113Karlheinrich_Meisel_20230315_123058 --o /tmp/tmp.obpqQS
+Tue Apr  2 09:42:53 UTC 2024
+
+setenv SUBJECTS_DIR /ext/processed-subjects
+cd /ext/fs-subjects
+/usr/local/freesurfer/bin/fs-check-version --s 02_113Karlheinrich_Meisel_20230315_123058 --o /tmp/tmp.obpqQS
+-rwxrwxr-x. 1 root root 18565 Jun 14  2023 /usr/local/freesurfer/bin/fs-check-version
+
+freesurfer-linux-centos8_x86_64-7.4.1-20230613-7eb8460
+$Id$
+Linux ce03d8cbac6b 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+pid 50
+Current FS Version freesurfer-linux-centos8_x86_64-7.4.1-20230613-7eb8460
+Subject does not have a bstampfile, copying /usr/local/freesurfer/build-stamp.txt
+Subject FS Version: freesurfer-linux-centos8_x86_64-7.4.1-20230613-7eb8460
+No constraints on version because REQ=UnSet and FsVerFile=NotThere
+#@#% fs-check-version match = 1
+fs-check-version Done
+INFO: SUBJECTS_DIR is /ext/processed-subjects
+Actual FREESURFER_HOME /usr/local/freesurfer
+Linux ce03d8cbac6b 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058
+
+ mri_convert /ext/fs-subjects/02_113Karlheinrich_Meisel_20230315_123058/t1_mpr_ns_sag_p2_iso_Series00004.nii /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig/001.mgz 
+
+mri_convert /ext/fs-subjects/02_113Karlheinrich_Meisel_20230315_123058/t1_mpr_ns_sag_p2_iso_Series00004.nii /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig/001.mgz 
+reading from /ext/fs-subjects/02_113Karlheinrich_Meisel_20230315_123058/t1_mpr_ns_sag_p2_iso_Series00004.nii...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (0.0376875, -0.96676, -0.252894)
+j_ras = (-0.00693364, 0.252815, -0.96749)
+k_ras = (-0.999265, -0.0382158, -0.00282481)
+writing to /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig/001.mgz...
+#--------------------------------------------
+#@# MotionCor Tue Apr  2 09:42:57 UTC 2024
+Found 1 runs
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+Only one run found so motion
+correction will not be performed. I'll
+copy the run to rawavg and continue.
+
+ cp /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig/001.mgz /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/rawavg.mgz 
+
+
+ mri_info /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/rawavg.mgz 
+
+rawavg.mgz ========================================
+Volume information for /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/rawavg.mgz
+          type: MGH
+    dimensions: 256 x 256 x 192
+   voxel sizes: 1.000000, 1.000000, 1.000000
+          type: SHORT (4)
+           fov: 256.000
+           dof: 1
+        xstart: -128.0, xend: 128.0
+        ystart: -128.0, yend: 128.0
+        zstart: -96.0, zend: 96.0
+            TR: 1900.00 msec, TE: 0.00 msec, TI: 0.00 msec, flip angle: 0.00 degrees
+       nframes: 1
+       PhEncDir: UNKNOWN
+       FieldStrength: 0.000000
+ras xform present
+    xform info: x_r =   0.0377, y_r =  -0.0069, z_r =  -0.9993, c_r =     1.8377
+              : x_a =  -0.9668, y_a =   0.2528, z_a =  -0.0382, c_a =    20.7266
+              : x_s =  -0.2529, y_s =  -0.9675, z_s =  -0.0028, c_s =   -11.0789
+
+talairach xfm : 
+Orientation   : PIL
+Primary Slice Direction: sagittal
+
+voxel to ras transform:
+                0.0377  -0.0069  -0.9993    93.8307
+               -0.9668   0.2528  -0.0382   115.7802
+               -0.2529  -0.9675  -0.0028   145.4014
+                0.0000   0.0000   0.0000     1.0000
+
+voxel-to-ras determinant -1
+
+ras to voxel transform:
+                0.0377  -0.9668  -0.2529   145.1666
+               -0.0069   0.2528  -0.9675   112.0540
+               -0.9993  -0.0382  -0.0028    98.5972
+               -0.0000  -0.0000  -0.0000     1.0000
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058
+
+ mri_convert /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/rawavg.mgz /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig.mgz --conform 
+
+mri_convert /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/rawavg.mgz /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig.mgz --conform 
+reading from /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/rawavg.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (0.0376875, -0.96676, -0.252894)
+j_ras = (-0.00693364, 0.252815, -0.96749)
+k_ras = (-0.999265, -0.0382158, -0.00282481)
+changing data type from short to uchar (noscale = 0)...
+MRIchangeType: Building histogram 0 956 1000, flo=0, fhi=0.999, dest_type=0
+Reslicing using trilinear interpolation 
+writing to /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig.mgz...
+
+ mri_add_xform_to_header -c /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/transforms/talairach.xfm /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig.mgz /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig.mgz 
+
+INFO: extension is mgz
+
+ mri_info /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig.mgz 
+
+orig.mgz ========================================
+Volume information for /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/orig.mgz
+          type: MGH
+    dimensions: 256 x 256 x 256
+   voxel sizes: 1.000000, 1.000000, 1.000000
+          type: UCHAR (0)
+           fov: 256.000
+           dof: 1
+        xstart: -128.0, xend: 128.0
+        ystart: -128.0, yend: 128.0
+        zstart: -128.0, zend: 128.0
+            TR: 1900.00 msec, TE: 0.00 msec, TI: 0.00 msec, flip angle: 0.00 degrees
+       nframes: 1
+       PhEncDir: UNKNOWN
+       FieldStrength: 0.000000
+ras xform present
+    xform info: x_r =  -1.0000, y_r =  -0.0000, z_r =  -0.0000, c_r =     1.8377
+              : x_a =   0.0000, y_a =   0.0000, z_a =   1.0000, c_a =    20.7266
+              : x_s =   0.0000, y_s =  -1.0000, z_s =   0.0000, c_s =   -11.0790
+
+talairach xfm : /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/transforms/talairach.xfm
+Orientation   : LIA
+Primary Slice Direction: coronal
+
+voxel to ras transform:
+               -1.0000  -0.0000  -0.0000   129.8377
+                0.0000   0.0000   1.0000  -107.2734
+                0.0000  -1.0000   0.0000   116.9211
+                0.0000   0.0000   0.0000     1.0000
+
+voxel-to-ras determinant -1
+
+ras to voxel transform:
+               -1.0000  -0.0000   0.0000   129.8377
+               -0.0000   0.0000  -1.0000   116.9210
+                0.0000   1.0000   0.0000   107.2734
+               -0.0000  -0.0000  -0.0000     1.0000
+#--------------------------------------------
+#@# Talairach Tue Apr  2 09:43:07 UTC 2024
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri
+
+ mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50 
+
+/usr/bin/bc
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri
+/usr/local/freesurfer/bin/mri_nu_correct.mni
+--no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50
+nIters 1
+mri_nu_correct.mni 7.4.1
+Linux ce03d8cbac6b 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+Tue Apr  2 09:43:07 UTC 2024
+tmpdir is ./tmp.mri_nu_correct.mni.343
+cd /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri
+AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.343/nu0.mgz --dtype uchar
+AntsN4BiasFieldCorrectionFs done
+mri_convert ./tmp.mri_nu_correct.mni.343/nu0.mgz orig_nu.mgz --like orig.mgz --conform
+mri_convert ./tmp.mri_nu_correct.mni.343/nu0.mgz orig_nu.mgz --like orig.mgz --conform 
+reading from ./tmp.mri_nu_correct.mni.343/nu0.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 3.72529e-09, 2.32831e-10)
+j_ras = (-4.65661e-10, 2.16314e-08, -1)
+k_ras = (-3.72529e-09, 1, 8.17818e-09)
+INFO: transform src into the like-volume: orig.mgz
+writing to orig_nu.mgz...
  
-subject: 31 - 3855
-running samseg: /ext/processed-subjects/3855...
-run_samseg --input /ext/fs-subjects/3855/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3855/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3855 --threads 8
-run_samseg --input /ext/fs-subjects/3855/MPRAGE_GRAPPA.nii /ext/fs-subjects/3855/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3855 --lesion --threads 8
-done
  
-subject: 32 - 3565
-running samseg: /ext/processed-subjects/3565...
-run_samseg --input /ext/fs-subjects/3565/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3565/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3565 --threads 8
-run_samseg --input /ext/fs-subjects/3565/MPRAGE_GRAPPA.nii /ext/fs-subjects/3565/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3565 --lesion --threads 8
-done
+Tue Apr  2 09:46:04 UTC 2024
+mri_nu_correct.mni done
+
+ talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+talairach_avi log file is transforms/talairach_avi.log...
+mv -f /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/transforms/talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt
+Started at Tue Apr 2 09:46:04 UTC 2024
+Ended   at Tue Apr  2 09:46:23 UTC 2024
+talairach_avi done
+
+ cp transforms/talairach.auto.xfm transforms/talairach.xfm 
+
+lta_convert --src orig.mgz --trg /usr/local/freesurfer/average/mni305.cor.mgz --inxfm transforms/talairach.xfm --outlta transforms/talairach.xfm.lta --subject fsaverage --ltavox2vox
+7.4.1
+
+--src: orig.mgz src image (geometry).
+--trg: /usr/local/freesurfer/average/mni305.cor.mgz trg image (geometry).
+--inmni: transforms/talairach.xfm input MNI/XFM transform.
+--outlta: transforms/talairach.xfm.lta output LTA.
+--s: fsaverage subject name
+--ltavox2vox: output LTA as VOX_TO_VOX transform.
+ LTA read, type : 1
+ 1.04993   0.05107   0.00360  -2.69975;
+-0.07687   0.94488   0.32253  -23.77972;
+ 0.02965  -0.40710   1.08334   12.41354;
+ 0.00000   0.00000   0.00000   1.00000;
+setting subject to fsaverage
+Writing  LTA to file transforms/talairach.xfm.lta...
+lta_convert successful.
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/transforms /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri 
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri 
+#--------------------------------------------
+#@# Talairach Failure Detection Tue Apr  2 09:46:25 UTC 2024
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri
+
+ talairach_afd -T 0.005 -xfm transforms/talairach.xfm 
+
+talairach_afd: Talairach Transform: transforms/talairach.xfm OK (p=0.6142, pval=0.2817 >= threshold=0.0050)
+
+ awk -f /usr/local/freesurfer/bin/extract_talairach_avi_QA.awk /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/transforms/talairach_avi.log 
+
+
+ tal_QC_AZS /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/transforms/talairach_avi.log 
+
+TalAviQA: 0.97670
+z-score: 0
+#--------------------------------------------
+#@# Nu Intensity Correction Tue Apr  2 09:46:25 UTC 2024
+
+ mri_nu_correct.mni --i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2 --ants-n4 
+
+/usr/bin/bc
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri
+/usr/local/freesurfer/bin/mri_nu_correct.mni
+--i orig.mgz --o nu.mgz --uchar transforms/talairach.xfm --n 2 --ants-n4
+nIters 2
+mri_nu_correct.mni 7.4.1
+Linux ce03d8cbac6b 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+Tue Apr  2 09:46:26 UTC 2024
+tmpdir is ./tmp.mri_nu_correct.mni.561
+cd /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri
+AntsN4BiasFieldCorrectionFs -i orig.mgz -o ./tmp.mri_nu_correct.mni.561/nu0.mgz --dtype uchar
+AntsN4BiasFieldCorrectionFs done
+mri_binarize --i ./tmp.mri_nu_correct.mni.561/nu0.mgz --min -1 --o ./tmp.mri_nu_correct.mni.561/ones.mgz
+
+7.4.1
+cwd /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri
+cmdline mri_binarize --i ./tmp.mri_nu_correct.mni.561/nu0.mgz --min -1 --o ./tmp.mri_nu_correct.mni.561/ones.mgz 
+sysname  Linux
+hostname ce03d8cbac6b
+machine  x86_64
+user     root
+
+input      ./tmp.mri_nu_correct.mni.561/nu0.mgz
+frame      0
+nErode3d   0
+nErode2d   0
+output     ./tmp.mri_nu_correct.mni.561/ones.mgz
+Binarizing based on threshold
+min        -1
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Starting parallel 1
+Found 16777216 values in range
+Counting number of voxels in first frame
+Found 16777215 voxels in final mask
+Writing output to ./tmp.mri_nu_correct.mni.561/ones.mgz
+Count: 16777215 16777215.000000 16777216 99.999994
+mri_binarize done
+mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.561/ones.mgz --i orig.mgz --sum ./tmp.mri_nu_correct.mni.561/sum.junk --avgwf ./tmp.mri_nu_correct.mni.561/input.mean.dat
+
+7.4.1
+cwd 
+cmdline mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.561/ones.mgz --i orig.mgz --sum ./tmp.mri_nu_correct.mni.561/sum.junk --avgwf ./tmp.mri_nu_correct.mni.561/input.mean.dat 
+sysname  Linux
+hostname ce03d8cbac6b
+machine  x86_64
+user     root
+whitesurfname  white
+UseRobust  0
+Loading ./tmp.mri_nu_correct.mni.561/ones.mgz
+Loading orig.mgz
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+
+Writing to ./tmp.mri_nu_correct.mni.561/input.mean.dat
+mri_segstats done
+mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.561/ones.mgz --i ./tmp.mri_nu_correct.mni.561/nu0.mgz --sum ./tmp.mri_nu_correct.mni.561/sum.junk --avgwf ./tmp.mri_nu_correct.mni.561/output.mean.dat
+
+7.4.1
+cwd 
+cmdline mri_segstats --id 1 --seg ./tmp.mri_nu_correct.mni.561/ones.mgz --i ./tmp.mri_nu_correct.mni.561/nu0.mgz --sum ./tmp.mri_nu_correct.mni.561/sum.junk --avgwf ./tmp.mri_nu_correct.mni.561/output.mean.dat 
+sysname  Linux
+hostname ce03d8cbac6b
+machine  x86_64
+user     root
+whitesurfname  white
+UseRobust  0
+Loading ./tmp.mri_nu_correct.mni.561/ones.mgz
+Loading ./tmp.mri_nu_correct.mni.561/nu0.mgz
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   1 segmentations
+Computing statistics for each segmentation
+
+Reporting on   1 segmentations
+Using PrintSegStat
+Computing spatial average of each frame
+
+Writing to ./tmp.mri_nu_correct.mni.561/output.mean.dat
+mri_segstats done
+mris_calc -o ./tmp.mri_nu_correct.mni.561/nu0.mgz ./tmp.mri_nu_correct.mni.561/nu0.mgz mul 1.16599561267833872164
+Saving result to './tmp.mri_nu_correct.mni.561/nu0.mgz' (type = MGH )                       [ ok ]
+mri_convert ./tmp.mri_nu_correct.mni.561/nu0.mgz nu.mgz --like orig.mgz
+mri_convert ./tmp.mri_nu_correct.mni.561/nu0.mgz nu.mgz --like orig.mgz 
+reading from ./tmp.mri_nu_correct.mni.561/nu0.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 3.72529e-09, 2.32831e-10)
+j_ras = (-4.65661e-10, 2.16314e-08, -1)
+k_ras = (-3.72529e-09, 1, 8.17818e-09)
+INFO: transform src into the like-volume: orig.mgz
+writing to nu.mgz...
+mri_make_uchar nu.mgz transforms/talairach.xfm nu.mgz
+type change took 0 minutes and 6 seconds.
+FIRST_PERCENTILE 0.010000
+WM_PERCENTILE    0.900000
+MAX_R 50.000000
+i1 = 2, i2 = 46
+#mri_make_uchar# mapping  4 92 to  3 110  :  b -2.33409 m 1.22102 : thresh 1.91159 maxsat 210.753 : nzero 10502847 nsat 43649
  
-subject: 33 - 3350
-running samseg: /ext/processed-subjects/3350...
-run_samseg --input /ext/fs-subjects/3350/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3350/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3350 --threads 8
-run_samseg --input /ext/fs-subjects/3350/MPRAGE_GRAPPA.nii /ext/fs-subjects/3350/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3350 --lesion --threads 8
-done
  
-subject: 34 - 3352
-running samseg: /ext/processed-subjects/3352...
-run_samseg --input /ext/fs-subjects/3352/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3352/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3352 --threads 8
-run_samseg --input /ext/fs-subjects/3352/MPRAGE_GRAPPA.nii /ext/fs-subjects/3352/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3352 --lesion --threads 8
-done
- 
-subject: 35 - 3353
-running samseg: /ext/processed-subjects/3353...
-run_samseg --input /ext/fs-subjects/3353/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3353/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3353 --threads 8
-run_samseg --input /ext/fs-subjects/3353/MPRAGE_GRAPPA.nii /ext/fs-subjects/3353/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3353 --lesion --threads 8
-done
- 
-subject: 36 - 3354
-running samseg: /ext/processed-subjects/3354...
-run_samseg --input /ext/fs-subjects/3354/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3354/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3354 --threads 8
-run_samseg --input /ext/fs-subjects/3354/MPRAGE_GRAPPA.nii /ext/fs-subjects/3354/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3354 --lesion --threads 8
-done
- 
-subject: 37 - 3357
-running samseg: /ext/processed-subjects/3357...
-run_samseg --input /ext/fs-subjects/3357/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3357/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3357 --threads 8
-run_samseg --input /ext/fs-subjects/3357/MPRAGE_GRAPPA.nii /ext/fs-subjects/3357/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3357 --lesion --threads 8
-done
- 
-subject: 38 - 3358
-running samseg: /ext/processed-subjects/3358...
-run_samseg --input /ext/fs-subjects/3358/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3358/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3358 --threads 8
-run_samseg --input /ext/fs-subjects/3358/MPRAGE_GRAPPA.nii /ext/fs-subjects/3358/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3358 --lesion --threads 8
-done
- 
-subject: 39 - 3359
-running samseg: /ext/processed-subjects/3359...
-run_samseg --input /ext/fs-subjects/3359/MPRAGE_T1_SAG.nii /ext/fs-subjects//ext/fs-subjects/3359/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3359 --threads 8
-run_samseg --input /ext/fs-subjects/3359/MPRAGE_T1_SAG.nii /ext/fs-subjects/3359/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3359 --lesion --threads 8
-done
- 
-subject: 40 - 3114
-running samseg: /ext/processed-subjects/3114...
-run_samseg --input /ext/fs-subjects/3114/MPRAGE_GRAPPA.nii /ext/fs-subjects//ext/fs-subjects/3114/flair_t2_reg.nii  --pallidum-separate
---output /ext/processed-subjects/3114 --threads 8
-run_samseg --input /ext/fs-subjects/3114/MPRAGE_GRAPPA.nii /ext/fs-subjects/3114/flair_t2_reg.nii  --pallidum-separate --output /ext/processed-subjects/3114 --lesion --threads 8
-done
-stopped at iteration 40
+Tue Apr  2 09:49:46 UTC 2024
+mri_nu_correct.mni done
+
+ mri_add_xform_to_header -c /ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri/transforms/talairach.xfm nu.mgz nu.mgz 
+
+INFO: extension is mgz
+#--------------------------------------------
+#@# Intensity Normalization Tue Apr  2 09:49:47 UTC 2024
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri
+
+ mri_normalize -g 1 -seed 1234 -mprage nu.mgz T1.mgz 
+
+using max gradient = 1.000
+setting seed for random number genererator to 1234
+assuming input volume is MGH (Van der Kouwe) MP-RAGE
+reading mri_src from nu.mgz...
+normalizing image...
+NOT doing gentle normalization with control points/label
+talairach transform
+ 1.04993   0.05107   0.00360  -2.69975;
+-0.07687   0.94488   0.32253  -23.77972;
+ 0.02965  -0.40710   1.08334   12.41354;
+ 0.00000   0.00000   0.00000   1.00000;
+processing without aseg, no1d=0
+MRInormInit(): 
+INFO: Modifying talairach volume c_(r,a,s) based on average_305
+MRInormalize(): 
+MRIsplineNormalize(): npeaks = 19
+Starting OpenSpline(): npoints = 19
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+
+Iterating 2 times
+---------------------------------
+3d normalization pass 1 of 2
+white matter peak found at 110
+white matter peak found at 110
+gm peak at 88 (88), valley at 61 (61)
+csf peak at 32, setting threshold to 69
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+---------------------------------
+3d normalization pass 2 of 2
+white matter peak found at 110
+white matter peak found at 110
+gm peak at 87 (87), valley at 54 (54)
+csf peak at 32, setting threshold to 68
+building Voronoi diagram...
+performing soap bubble smoothing, sigma = 8...
+Done iterating ---------------------------------
+writing output to T1.mgz
+3D bias adjustment took 1 minutes and 23 seconds.
+#--------------------------------------------
+#@# Skull Stripping Tue Apr  2 09:51:11 UTC 2024
+/ext/processed-subjects/02_113Karlheinrich_Meisel_20230315_123058/mri
+
+ mri_em_register -skull nu.mgz /usr/local/freesurfer/average/RB_all_withskull_2020_01_02.gca transforms/talairach_with_skull.lta 
+
+aligning to atlas containing skull, setting unknown_nbr_spacing = 5
+
+== Number of threads available to mri_em_register for OpenMP = 1 == 
+reading 1 input volumes...
+logging results to talairach_with_skull.log
+reading '/usr/local/freesurfer/average/RB_all_withskull_2020_01_02.gca'...
+GCAread took 0 minutes and 1 seconds.
+average std = 23.0   using min determinant for regularization = 52.8
+0 singular and 9205 ill-conditioned covariance matrices regularized
+reading 'nu.mgz'...
+freeing gibbs priors...done.
+accounting for voxel sizes in initial transform
+bounding unknown intensity as < 8.9 or > 556.0 
+total sample mean = 77.3 (1403 zeros)
+************************************************
+spacing=8, using 3292 sample points, tol=1.00e-05...
+************************************************
+register_mri: find_optimal_transform
+find_optimal_transform: nsamples 3292, passno 0, spacing 8
+resetting wm mean[0]: 100 --> 108
+resetting gm mean[0]: 61 --> 61
+input volume #1 is the most T1-like
+using real data threshold=6.0
+skull bounding box = (45, 36, 14) --> (208, 255, 255)
+finding center of left hemi white matter
+using (99, 109, 135) as brain centroid of Right_Cerebral_White_Matter...
+MRImask(): AllowDiffGeom = 1
+mean wm in atlas = 108, using box (79,82,105) --> (119, 136,164) to find MRI wm
+before smoothing, mri peak at 107
+robust fit to distribution - 106 +- 4.7
+after smoothing, mri peak at 107, scaling input intensities by 1.009
+scaling channel 0 by 1.00935
+initial log_p = -4.606
+************************************************
+First Search limited to translation only.
+************************************************
+max log p =    -4.610006 @ (0.000, 0.000, 0.000)
+max log p =    -4.528164 @ (-5.263, -5.263, -5.263)
+max log p =    -4.465484 @ (2.632, 7.895, -2.632)
+max log p =    -4.441753 @ (1.316, -1.316, 1.316)
+max log p =    -4.430858 @ (-1.974, 0.658, -1.974)
+max log p =    -4.423196 @ (0.987, -0.329, 0.329)
+max log p =    -4.423196 @ (0.000, 0.000, 0.000)
+max log p =    -4.423196 @ (0.000, 0.000, 0.000)
+Found translation: (-2.3, 1.6, -8.2): log p = -4.423
+****************************************
+Nine parameter search.  iteration 0 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-4.226, old_max_log_p =-4.423 (thresh=-4.4)
+ 1.07500   0.00000   0.00000  -11.85802;
+ 0.00000   1.19413   0.31997  -59.65075;
+ 0.00000  -0.27532   1.02750   21.26317;
+ 0.00000   0.00000   0.00000   1.00000;
+iteration took 1 minutes and 16 seconds.
+****************************************
+Nine parameter search.  iteration 1 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-4.212, old_max_log_p =-4.226 (thresh=-4.2)
+ 1.07500   0.00000   0.00000  -11.85802;
+ 0.00000   1.23407   0.48519  -78.04226;
+ 0.00000  -0.42883   0.97695   48.36739;
+ 0.00000   0.00000   0.00000   1.00000;
+iteration took 1 minutes and 14 seconds.
+****************************************
+Nine parameter search.  iteration 2 nscales = 0 ...
+****************************************
+Result so far: scale 1.000: max_log_p=-4.212, old_max_log_p =-4.212 (thresh=-4.2)
+ 1.07500   0.00000   0.00000  -11.85802;
+ 0.00000   1.23407   0.48519  -78.04226;
+ 0.00000  -0.42883   0.97695   48.36739;
+ 0.00000   0.00000   0.00000   1.00000;
+reducing scale to 0.2500
+iteration took 1 minutes and 13 seconds.
+****************************************
+Nine parameter search.  iteration 3 nscales = 1 ...
+****************************************
+Result so far: scale 0.250: max_log_p=-4.175, old_max_log_p =-4.212 (thresh=-4.2)
+ 1.07500   0.00000   0.00000  -11.85802;
+ 0.00000   1.24632   0.37705  -66.49171;
+ 0.00000  -0.31435   1.03719   26.09284;
+ 0.00000   0.00000   0.00000   1.00000;
+iteration took 1 minutes and 11 seconds.
+****************************************
+Nine parameter search.  iteration 4 nscales = 1 ...
+****************************************
+Result so far: scale 0.250: max_log_p=-4.175, old_max_log_p =-4.175 (thresh=-4.2)
+ 1.07500   0.00000   0.00000  -11.85802;
+ 0.00000   1.24632   0.37705  -66.49171;
+ 0.00000  -0.31435   1.03719   26.09284;
+ 0.00000   0.00000   0.00000   1.00000;
+reducing scale to 0.0625
+iteration took 1 minutes and 11 seconds.
+****************************************
+Nine parameter search.  iteration 5 nscales = 2 ...
+****************************************

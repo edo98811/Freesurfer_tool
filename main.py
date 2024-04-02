@@ -3,13 +3,16 @@ import prepare as p
 import docker as d
 import helper_functions as h
 import argparse
+import prepare_dirs as pd
 
 # TODO: move number of iteration for docker as parameter or in setting
+N1 = 120
+N2 = 20
 
 class FreesurferTool():
-    def __init__(self, save_folder="", destination_folder=""):
+    def __init__(self, origin_folder="", destination_folder=""):
         self.SET = h.read_settings_from_json("settings.json")
-        self.Docker = d.DockerInstance(self.SET, save_folder, destination_folder)
+        self.Docker = d.DockerInstance(self.SET, origin_folder, destination_folder)
         self.Table = t.Table(self.SET)
         self.Prepare = p.Prepare(self.SET, self.Table)
 
@@ -20,25 +23,32 @@ class FreesurferTool():
 
 def create_table():
     fs = FreesurferTool()
-    fs.Table.create_mris_table()
-    fs.Table.save_to_excel()
+    fs.Table.save_table()
+
+def convert_dicom():
+    fs = FreesurferTool(origin_folder="dicom", destination_folder="nifti")
+    fs.Prepare.prepare_for_conversion()
+    # fs.Docker.debugging_container("convertdicom")
+    fs.Docker.run("convertdicom", N1, N2)
 
 def run_recon_all():
-    fs = FreesurferTool(save_folder="nifti", destination_folder="reconall")
+    fs = FreesurferTool(origin_folder="nifti", destination_folder="reconall")
     fs.Prepare.prepare_for_reconall()
-    fs.Docker.run("reconall", 120, 10)
+    fs.Docker.run("reconall", N1, N2)
 
 def run_samseg():
-    fs = FreesurferTool(save_folder="nifti", destination_folder="samseg")
+    fs = FreesurferTool(origin_folder="nifti", destination_folder="samseg")
     fs.Prepare.prepare_for_samseg()
-    fs.Docker.run("samseg", 120, 10) 
+    # fs.Docker.run("samseg", N1, N2) 
 
 def registration():
-    fs = FreesurferTool(save_folder="nifti", destination_folder="nifti")
-    fs.Prepare.prepare_for_samseg()
-    fs.Docker.run("register", 120, 10) 
+    fs = FreesurferTool(origin_folder="nifti", destination_folder="nifti")
+    fs.Prepare.prepare_for_registration()
+    fs.Docker.run("register", N1, N2) 
 
-
+def prepare_dicom():
+    pd.process_folders()
+    
 
 def run_selected_function(args) -> None:
 
@@ -46,23 +56,33 @@ def run_selected_function(args) -> None:
         create_table()
     elif args.option == "samseg":
         run_samseg()
+    elif args.option == "dicom_convert":
+        convert_dicom()
     elif args.option == "reconall":
         run_recon_all()
     elif args.option == "register":
         registration()
+    elif args.option == "dicom_prepare":
+        registration()
     else:
         print("Invalid option. Please provide a valid option.")
 
-def main()-> None :
+def main() -> None :
 
     # Create ArgumentParser object
     parser = argparse.ArgumentParser(description="To run freesurfer tool")
     
     # Add argument for the function selection
     parser.add_argument("option", type=str, help="Write the name of a function")
+    parser.add_argument("--N1", type=int, default=120)
+    parser.add_argument("--N2", type=int, default=20)
     
     # Parse the command-line arguments
     args = parser.parse_args()
+    global N1 
+    N1 = args.N1
+    global N2 
+    N2 = args.N2
 
     run_selected_function(args)
     

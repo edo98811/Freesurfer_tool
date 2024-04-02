@@ -12,6 +12,8 @@ cd $VOLUMES_DIR
 start=0
 end=1
 
+test=0
+
 reconall() {
 
   # Iterate through the array using a for loop
@@ -29,13 +31,18 @@ reconall() {
         # echo "Deleting folder: $SUBJECTS_DIR/$destination_filename"
         # rm -r "$SUBJECTS_DIR/$destination_filename"
       # fi
-            
+      if [ $test -eq 0 ]; then
+        recon-all -all -s $destination_filename -i $nii_volume -no-isrunning
+      else  
+        echo "recon-all -all -s $destination_filename -i $nii_volume -no-isrunning " > $SUBJECTS_DIR/$destination_filename.txt
+      fi
+
       echo "running recon-all: $destination_filename... from $nii_volume"
       
       # recon-all -all -s $destination_filename -i $nii_volume -no-isrunning 
       # recon-all -autorecon2-wm  -s $destination_filename -i $nii_volume -no-isrunning -nofix
-      echo "recon-all -all -s $destination_filename -i $nii_volume -no-isrunning " # > $SUBJECTS_DIR/$destination_filename.txt
-      sleep 1
+      
+      # sleep 1
 
       echo "done"
       
@@ -72,10 +79,13 @@ samseg() {
       echo "running samseg: $SUBJECTS_DIR/$folder..."
       echo "run_samseg --input $t1 $VOLUMES_DIR/$t2_flair  --pallidum-separate"
       echo "--output $SUBJECTS_DIR/$folder --threads 8"
-      
-      echo "run_samseg --input "$t1" "$t2_flair"  --pallidum-separate --output "$SUBJECTS_DIR/$folder" --lesion --threads 8" # > /dev/null
 
-      
+      if [ $test -eq 0 ]; then
+        run_samseg --input "$t1" "$t2_flair"  --pallidum-separate --output "$SUBJECTS_DIR/$folder" --lesion --threads 8
+      else  
+        echo "run_samseg --input "$t1" "$t2_flair"  --pallidum-separate --output "$SUBJECTS_DIR/$folder" --lesion --threads 8" > $SUBJECTS_DIR/$folder.txt
+      fi
+
       echo "done"
       
     fi
@@ -110,12 +120,23 @@ register(){
         continue  # Skip to the next iteration
       fi
             
-      echo "running coreg..."  
-      mri_coreg --mov $t2_flair --ref $t1 --reg "$folder/$registration_name" >/dev/null 
-      echo "coreg OK - running vol2vol..."
-      mri_vol2vol --mov  $t2_flair  --reg "$folder/$registration_name"  --o "$folder/$registered_flair_name" --targ $t1 >/dev/null 
-      echo "vol2vol OK"
-      echo "done subject: $count - $folder"
+
+
+      if [ $test -eq 0 ]; then
+        echo "running coreg..."  
+        mri_coreg --mov $t2_flair --ref $t1 --reg "$folder/$registration_name" >/dev/null 
+        echo "coreg OK - running vol2vol..."
+        mri_vol2vol --mov  $t2_flair  --reg "$folder/$registration_name"  --o "$folder/$registered_flair_name" --targ $t1 >/dev/null 
+        echo "vol2vol OK"
+        echo "done subject: $count - $folder"
+      else  
+        echo "running coreg..."  
+        echo "mri_coreg --mov $t2_flair --ref $t1 --reg $folder/$registration_nam "  > $SUBJECTS_DIR/$folder/$registration_name.txt
+        echo "coreg OK - running vol2vol..."
+        echo "mri_vol2vol --mov  $t2_flair  --reg $folder/$registration_name  --o $folder/$registered_flair_name --targ $t1 " > $SUBJECTS_DIR/$folder/$registered_flair_name.txt
+        echo "vol2vol OK"
+        echo "done subject: $count - $folder"
+      fi
 
     fi
   
@@ -148,8 +169,13 @@ convertdicom(){
       echo "converting dicom folder: $dicom_folder..."
       
       mkdir $dir
-      mri_convert "$dicom_folder/$first_element" "$destination_filename" #>/dev/null      
       
+
+      if [ $test -eq 0 ]; then
+        mri_convert "$dicom_folder/$first_element" "$destination_filename" #>/dev/null 
+      else  
+        echo "mri_convert $dicom_folder/$first_element $destination_filename "  > $SUBJECTS_DIR/$dir.txt
+      fi     
       echo "done"
       
     fi

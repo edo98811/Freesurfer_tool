@@ -4,33 +4,81 @@ import string
 import secrets
 import json 
 import helper_functions as h
+import ast
 
+# Function to update for dicom finding
+def dicom_finding(root, dicom_dir):
+  
+    # For each subdirectory in the directory (returns the acquistion name)
+  if root.split('/')[-2].startswith("01"):
+    return None
+  else:
+    return f"{root.split('/')[-2]}_{root.split('/')[-1]}"
+
+
+
+def remove_spaces_in_folders(base_directory):
+    # Iterate over all items in the base directory
+    for item in os.listdir(base_directory):
+        item_path = os.path.join(base_directory, item)
+        
+        # Check if the item is a directory
+        if os.path.isdir(item_path):
+            # Replace spaces with underscores in the directory name
+            new_name = item.replace(" ", "")
+            new_path = os.path.join(base_directory, new_name)
+            
+            # Rename the directory if its name contains spaces
+            if new_name != item:
+              try: 
+                os.rename(item_path, new_path)  
+              except: 
+                print(f"{item_path} is double")
+            
+            # Recursively call the function for subdirectories
+            remove_spaces_in_folders(new_path)
+            
+def safe_eval(s: str) -> str:
+    try:
+        return ast.literal_eval(s)
+    except (SyntaxError, ValueError):
+        return s
+
+
+ 
 class Table():
-  def __init__(self, SET):
+  def __init__(self, SET): 
     self.SET = SET
-    self.create_mris_table()
-    self.save_to_excel()
-    self.table = pd.read_excel(os.path.join(self.SET["table_path"], self.SET["table_name"]))
-
+    if not os.path.isfile(os.path.join(self.SET["table_path"], self.SET["table_name"])):
+      print(f"Creating Table in location: {os.path.join(self.SET["table_path"], self.SET["table_name"])}")
+      self.create_mris_table() # posso rendere questo processo migliore? (ad es, la load se esiste, la crea se esiste), magari salvarla e un processo diverso
+    else:
+      print(f"Updating table in location: {os.path.join(self.SET["table_path"], self.SET["table_name"])}")
+      # self.table = pd.read_excel(os.path.join(self.SET["table_path"], self.SET["table_name"]))
+      self.update_mris_table()
 
   def create_mris_table(self):
-      self.table = self.create_table_df(os.path.join(self.SET["dicom"]))
+      self.table = (self.create_table_df(os.path.join(self.SET["dicom"])))
 
       self.create_subj_info()
       self.add_processing_info(os.path.join(self.SET["reconall"]), os.path.join(self.SET["samseg"]), os.path.join(self.SET["nifti"]))
 
       
-  def update_mris_table(self, df_path: str):
+  def update_mris_table(self):
 
-    self.table = pd.read_excel(df_path)
+    self.table = pd.read_excel(os.path.join(self.SET["table_path"], self.SET["table_name"]))
 
+    columns_to_apply = ['mris', 'paths', 'converted']
+    self.table[columns_to_apply] = self.table[columns_to_apply].map(safe_eval)
+    
     self.create_subj_info()
     self.add_processing_info(os.path.join(self.SET["reconall"]), os.path.join(self.SET["samseg"]), os.path.join(self.SET["nifti"]))
 
 
 # to delete the return value
   def create_table_df(self, base_directory: str):
-      
+      remove_spaces_in_folders(base_directory)
+
       data = {
         "acquisition": [],
         "mris": [],
@@ -38,16 +86,21 @@ class Table():
       }
 
       for root, dirs, _ in os.walk(base_directory):
-          # For each subdirectory in the directory
-          for MRIdir in dirs:
+
+
+          for dicom_dir in dirs:
                 
-            # Go into the condition only if i reached a directory that containes only files
-            if all(os.path.isfile(os.path.join(root, MRIdir, item)) for item in os.listdir(os.path.join(root,MRIdir))): 
+            # Go into the condition only if i reached a directory that containes only files (dicom folder)
+            if all(os.path.isfile(os.path.join(root, dicom_dir, item)) for item in os.listdir(os.path.join(root,dicom_dir))): 
+              
+              # For each subdirectory in the directory
+              if root.split('/')[-2].startswith("01"):
+                continue
             
-              # Select the acquisition ID
-              acquisition = root.split("/")[-3]
-              MRIdir_id = root.split("/")[-2]
-              rel_path = os.path.relpath(os.path.join(root, MRIdir), base_directory)
+              # Select the acquisition ID ( to change when new type of dataset) 
+              acquisition = f"{root.split('/')[-2]}_{root.split('/')[-1]}"
+              #MRIdir_id = root.split("/")[-2]
+              rel_path = os.path.relpath(os.path.join(root, dicom_dir), base_directory)
 
               # If its not the first iteration
               if len(data["acquisition"])!= 0:
@@ -55,17 +108,17 @@ class Table():
                 # If it is the same subject (acquisition ID al fondo della lista = acquisition ID attuale)
                 if not (data["acquisition"][-1] == acquisition):
                   data["acquisition"].append(acquisition)
-                  data["mris"].append([MRIdir_id]) # list because i neet to be able to append to it other mris
+                  data["mris"].append([dicom_dir]) # list because i need to be able to append to it other mris
                   data["paths"].append([rel_path]) # to convert, it is not in the direct childern
                   
                 # it is always the last one in the queue to add
                 else:
-                  data["mris"][-1].append(MRIdir_id) # in this bloc
+                  data["mris"][-1].append(dicom_dir) # in this bloc
                   data["paths"][-1].append(rel_path)
                   
               else: 
                 data["acquisition"].append(acquisition)
-                data["mris"].append([MRIdir_id]) 
+                data["mris"].append([dicom_dir]) 
                 data["paths"].append([rel_path])
                               
       return pd.DataFrame.from_dict(data)
@@ -78,21 +131,21 @@ class Table():
     
     for rowname, row in self.table.iterrows():
       for mri in row["mris"]:
-        if not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1_no"]):
+        if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1_no"]):
             self.table.at[rowname, "t1"].append(mri)
 
     self.table["t2"] = [list() for _ in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
       for mri in row["mris"]:
-        if not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T2"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T2_no"]):
+        if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T2"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T2_no"]):
             self.table.at[rowname, "t2"].append(mri)
 
     self.table["flair"] = [list() for _ in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
       for mri in row["mris"]:
-        if not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["FLAIR"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["FLAIR_no"]):
+        if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["FLAIR"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["FLAIR_no"]):
           self.table.at[rowname, "flair"].append(mri)
     
     self.table["samseg"] = ["Not possible" for x in range(len(self.table.index))]
@@ -101,7 +154,7 @@ class Table():
 
       if len(row["t1"]) >=1 and len(row["t2"]) >=1: 
         self.table.at[rowname, "samseg"] = "Possible - only t2 not fl"
-      if len(row["t1"]) >=1 and len(row["flair"]) >=1: 
+      elif len(row["t1"]) >=1 and len(row["flair"]) >=1: 
         self.table.at[rowname, "samseg"] = "Possible"
 
     self.table["reconall"] = ["Not possible" for x in range(len(self.table.index))]
@@ -109,9 +162,14 @@ class Table():
     for rowname, row in self.table.iterrows():
 
       if len(row["t1"]) >=1: 
-        self.table.at[rowname, "reconall"] = "Possible - only t2 not fl"
+        self.table.at[rowname, "reconall"] = "Possible"
       if len(row["t1"]) >=1: 
         self.table.at[rowname, "reconall"] = "Possible" 
+
+    # Delete rows that dont contain any useful MRIs (can delete if not needed)
+    for rowname, row in self.table.iterrows():
+      if len(row["t1"]) == 1 and len(row["flair"]) == 0 and len(row["t2"]):
+        self.table = self.table.drop(rowname, axis=0)
 
   def add_processing_info(self, search_path_reconall: str, search_path_samseg: str, search_path_data: str) -> None:
 
@@ -139,14 +197,15 @@ class Table():
 
     # Check if nifti is present
     for index, row in self.table.iterrows():
-      for i, mri in enumerate(row["mris"]):
+      for i , mri in enumerate(row["mris"]):
         if os.path.isfile(os.path.join(search_path_data, f"{row['acquisition']}", f"{mri}.nii")):
           self.table.at[index, "converted"].append(True)
         else:
-          print(f"{os.path.join(search_path_data, f"{row['acquisition']}", f"{mri}.nii")} does not exist")
+          # nifti_folder = os.path.join(search_path_data, f"{row['acquisition']}", f"{mri}.nii")
+          # print(f"NIFTI: {nifti_folder} does not exist")
           self.table.at[index, "converted"].append(False)
 
-  def save_to_excel(self, sheet_name="subjects"):
+  def save_table(self, sheet_name="subjects"):
 
       excel_filename = os.path.join(self.SET["table_path"], self.SET["table_name"])
       # Create a Pandas Excel writer using the XlsxWriter engine

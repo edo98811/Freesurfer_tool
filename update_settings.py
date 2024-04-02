@@ -21,7 +21,8 @@ def update_json(json_file, field, new_value):
     print(f"Field '{field}' updated successfully.")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    # print(len(sys.argv))
+    if len(sys.argv) != 4:
         print("Usage: update_settings.py <field_to_update> <new_value>")
         sys.exit(1)
 

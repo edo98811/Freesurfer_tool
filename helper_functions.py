@@ -3,7 +3,7 @@ from collections import defaultdict
 import os
 import sys
 
-def read_settings_from_json(file_path):
+def read_settings_from_json(file_path="settings.json"):
     """
     Read settings from a JSON file and return them as a dictionary.
     
@@ -17,7 +17,7 @@ def read_settings_from_json(file_path):
         settings = json.load(json_file)
     return defaultdict(lambda: [], settings)
 
-def save_settings_to_json(settings, file_path):
+def save_settings_to_json(settings, file_path="settings.json"):
     """
     Save settings to a JSON file.
     

@@ -1,2 +1,0 @@
-docker: Error response from daemon: Conflict. The container name "/edoardo_freesurfer_10" is already in use by container "8de3396eab999b3fef2ec7732c4374eda88ec6c2b7557313530c7b8a6351891f". You have to remove (or rename) that container to be able to reuse that name.
-See 'docker run --help'.

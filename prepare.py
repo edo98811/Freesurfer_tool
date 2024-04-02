@@ -37,26 +37,45 @@ class Prepare():
     self.df = table.table
     self.SET = SET
 
-  def prepare_for_conversion(self, cols=["mris"], last=False)-> None:
+  def prepare_for_conversion(self, cols=["t1", "t2", "flair"], last=True)-> None:
     
     source_docker_origin_path = []
     source_docker_destination_path = []
 
     for _, row in self.df.iterrows():
 
+        # Iterate through the column of which the mris need to be converted
         for col in cols:
-          column = eval(row[col])
-          rel_paths = eval(row['paths'])
-          converted = eval(row['converted'])
+          try:
+            column = row[col]
+          except:
+            raise Warning("invalid column {col}")
+
+          rel_paths = row['paths']
+          converted = row['converted']
+          mris = row['mris']
           
-          if column:
+          # If the column contains at least one mri
+          if len(column) > 0:
 
+              # in case only one per colum (the last) needs to be converted
               if last:
-                column = column[-1]
+                column = [column[-1]] # to keep it as a list
+                print(f"kept column {column}")
 
+              # get the indexes of the wanted mris and find the correct rel path
+              indexes = [i for i, elem in enumerate(mris) if elem in column]
+              rel_paths_to_convert = []
+              converted_to_convert = []
+              for index in indexes: 
+
+                rel_paths_to_convert.append(rel_paths[index])
+                converted_to_convert.append(converted[index])
               
-              for last_element, last_path, c in zip(column, rel_paths, converted):
+              # iterate though the list of mri to convert
+              for last_element, last_path, c in zip(column, rel_paths_to_convert, converted_to_convert):
                 # Create the key in the format "subj_id_acquisition"
+
                 if (not c):
                   source_docker_origin_path.append(f"/ext/fs-subjects/{last_path}")
                   source_docker_destination_path.append(f"/ext/processed-subjects/{row['acquisition']}/{last_element}.nii")
@@ -72,7 +91,11 @@ class Prepare():
 
       if row["reconall"] == "Possible":
 
-        source_docker_origin_path.append(f"/ext/fs-subjects/{row['acquisition']}/{eval(row["t1"])[-1]}.nii")
+        if f"/ext/fs-subjects/{row['acquisition']}/{row["t1"][-1]}.nii" != f"/ext/fs-subjects/{row['acquisition']}/{row["t1"][-1]}.nii".replace(" ", ""):
+          print (f"non valid name for freesurfer: /ext/fs-subjects/{row['acquisition']}/{row["t1"][-1]}.nii")
+          continue
+        
+        source_docker_origin_path.append(f"/ext/fs-subjects/{row['acquisition']}/{row["t1"][-1]}.nii")
         source_docker_destination_path.append(f"{row['acquisition']}")
     
     _save_files(source_docker_origin_path, source_docker_destination_path) 
