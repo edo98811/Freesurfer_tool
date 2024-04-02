@@ -1,1 +1,0 @@
-recon-all -all -s 4092 -i /ext/fs-subjects/4092/sag_mprage.nii -no-isrunning 

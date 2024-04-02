@@ -1,1 +1,0 @@
-recon-all -all -s 3605 -i /ext/fs-subjects/3605/SAG_T1_3D_MPRAGE.nii -no-isrunning 

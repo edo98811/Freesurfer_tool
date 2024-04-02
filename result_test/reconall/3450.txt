@@ -1,1 +1,0 @@
-recon-all -all -s 3450 -i /ext/fs-subjects/3450/3D_SAG.nii -no-isrunning 

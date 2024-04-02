@@ -1,1 +1,0 @@
-recon-all -all -s 3541 -i /ext/fs-subjects/3541/MPRAGEadni.nii -no-isrunning 

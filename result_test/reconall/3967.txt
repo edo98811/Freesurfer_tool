@@ -1,1 +1,0 @@
-recon-all -all -s 3967 -i /ext/fs-subjects/3967/FSPGR_3D_SAG.nii -no-isrunning 

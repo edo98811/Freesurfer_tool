@@ -1,1 +1,0 @@
-recon-all -all -s 3651 -i /ext/fs-subjects/3651/SAG_T1_3DMPRAGE.nii -no-isrunning 
