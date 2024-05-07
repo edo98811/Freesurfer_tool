@@ -5,15 +5,26 @@ import secrets
 import json 
 import helper_functions as h
 import ast
+import re
 
-# Function to update for dicom finding
-def dicom_finding(root, dicom_dir):
+
+# Funtion to modify each time, it returns the aquisition name
+def acquisition_name(folder_path, image_name):
+
+  # if it is not nifti or it is a CT scan
+  if "CCT " in image_name or not image_name.endswith(".nii"):
+    return None
   
+  # match this string (r string literal) with the last folder in the root
+  pattern = r'^.*?(?=_{2,})'
+  result = re.sub(pattern, '', folder_path.split('/')[-1])
+
+  return result
     # For each subdirectory in the directory (returns the acquistion name)
-  if root.split('/')[-2].startswith("01"):
+  if folder_path.split('/')[-2].startswith("01"):
     return None
   else:
-    return f"{root.split('/')[-2]}_{root.split('/')[-1]}"
+    return f"{folder_path.split('/')[-2]}_{folder_path.split('/')[-1]}"
 
 
 
@@ -76,7 +87,7 @@ class Table():
 
 
 # to delete the return value
-  def create_table_df(self, base_directory: str):
+  def create_table_df(self, base_directory: str, find_type="dicom"):
       remove_spaces_in_folders(base_directory)
 
       data = {
@@ -84,43 +95,95 @@ class Table():
         "mris": [],
         "paths": []
       }
-
-      for root, dirs, _ in os.walk(base_directory):
-
-
-          for dicom_dir in dirs:
-                
-            # Go into the condition only if i reached a directory that containes only files (dicom folder)
-            if all(os.path.isfile(os.path.join(root, dicom_dir, item)) for item in os.listdir(os.path.join(root,dicom_dir))): 
-              
-              # For each subdirectory in the directory
-              if root.split('/')[-2].startswith("01"):
-                continue
+      if find_type == "dicom":
+        # Iterate through all the directories in base_directory
+        for root, dirs, _ in os.walk(base_directory):
             
-              # Select the acquisition ID ( to change when new type of dataset) 
-              acquisition = f"{root.split('/')[-2]}_{root.split('/')[-1]}"
-              #MRIdir_id = root.split("/")[-2]
-              rel_path = os.path.relpath(os.path.join(root, dicom_dir), base_directory)
+            # Iterate through all images (or believed to be)
+            for dicom_dir in dirs:
+                  
+              # Go into the condition only if i reached a directory that containes only files (dicom folder)
+              if all(os.path.isfile(os.path.join(root, dicom_dir, item)) for item in os.listdir(os.path.join(root,dicom_dir))): 
+              
+                # Select the acquisition ID ( to change when new type of dataset) 
 
-              # If its not the first iteration
-              if len(data["acquisition"])!= 0:
+                # acquisition = f"{root.split('/')[-2]}_{root.split('/')[-1]}"
+                acquisition = acquisition_name(root, dicom_dir)
+                if acquisition == None:
+                  continue
+                # acquisition = root.split("/")[-2]
 
-                # If it is the same subject (acquisition ID al fondo della lista = acquisition ID attuale)
-                if not (data["acquisition"][-1] == acquisition):
+                # Create the relative path between base directory and the dicom dir
+                rel_path = os.path.relpath(os.path.join(root, dicom_dir), base_directory)
+
+                # If its not the first iteration
+                if len(data["acquisition"])!= 0:
+
+                  # If it is not the same subject (acquisition ID al fondo della lista != acquisition ID attuale)
+                  if not (data["acquisition"][-1] == acquisition):
+                    data["acquisition"].append(acquisition)
+                    data["mris"].append([dicom_dir]) # [] list because i need to be able to append to it other mris
+                    data["paths"].append([rel_path]) # to convert, it is not in the direct childern
+                    
+                  # If it only a new acquisition, but not new subject, the index is the last subject
+                  else:
+                    data["mris"][-1].append(dicom_dir) 
+                    data["paths"][-1].append(rel_path)
+
+                # If it is the first iteration, this is needed because of this data["acquisition"][-1]  if condition 
+                else: 
                   data["acquisition"].append(acquisition)
-                  data["mris"].append([dicom_dir]) # list because i need to be able to append to it other mris
-                  data["paths"].append([rel_path]) # to convert, it is not in the direct childern
+                  data["mris"].append([dicom_dir]) 
+                  data["paths"].append([rel_path])
+
+      elif find_type == "nifti":
+
+        # Iterate through all the directories in base_directory
+        for root, dirs, niis in os.walk(base_directory):
+            
+            # Iterate through all images (or believed to be)
+            for nii_file in niis:
                   
-                # it is always the last one in the queue to add
-                else:
-                  data["mris"][-1].append(dicom_dir) # in this bloc
-                  data["paths"][-1].append(rel_path)
-                  
-              else: 
-                data["acquisition"].append(acquisition)
-                data["mris"].append([dicom_dir]) 
-                data["paths"].append([rel_path])
-                              
+              # Go into the condition only if i reached a nii file
+              if nii_file.endswith(".nii"):
+              
+                # Select the acquisition ID ( to change when new type of dataset) 
+
+                # acquisition = f"{root.split('/')[-2]}_{root.split('/')[-1]}"
+                acquisition = acquisition_name(root, nii_file)
+                if acquisition == None:
+                  continue
+                # acquisition = root.split("/")[-2]
+
+                # Create the relative path between base directory and the dicom dir
+                rel_path = os.path.relpath(os.path.join(root, nii_file), base_directory)
+
+                # nii file to be saved without extension in order for all the rest to work (it works without eextension)
+                nii_file = nii_file[:-4]
+
+                # If its not the first iteration
+                if len(data["acquisition"])!= 0:
+
+                  # If it is not the same subject (acquisition ID al fondo della lista != acquisition ID attuale)
+                  if not (data["acquisition"][-1] == acquisition):
+                    data["acquisition"].append(acquisition)
+                    data["mris"].append([nii_file]) # [] list because i need to be able to append to it other mris
+                    data["paths"].append([rel_path]) # to convert, it is not in the direct childern
+                    
+                  # If it only a new acquisition, but not new subject, the index is the last subject
+                  else:
+                    data["mris"][-1].append(nii_file) 
+                    data["paths"][-1].append(rel_path)
+
+                # If it is the first iteration, this is needed because of this data["acquisition"][-1]  if condition 
+                else: 
+                  data["acquisition"].append(acquisition)
+                  data["mris"].append([nii_file]) 
+                  data["paths"].append([rel_path])
+      
+      else: 
+        raise ValueError("find_type has invalid value (dicom or nifti)")
+      
       return pd.DataFrame.from_dict(data)
 
   def create_subj_info(self):
