@@ -14,6 +14,30 @@ end=1
 
 test=0
 
+create_tables() {
+
+  cd $SUBJECTS_DIR
+  asegstats2table --subjectsfile $subjects_path --meas volume --tablefile aseg_volumes.txt --skip
+
+  aparcstats2table --subjectsfile $subjects_path --hemi rh --meas thickness --tablefile rh_aparc_thickness.txt --skip
+  aparcstats2table --subjectsfile $subjects_path --hemi lh --meas thickness --tablefile lh_aparc_thickness.txt --skip
+
+  aparcstats2table --subjectsfile $subjects_path --hemi rh --meas volume --tablefile rh_aparc_volume.txt --skip
+  aparcstats2table --subjectsfile $subjects_path --hemi lh --meas volume --tablefile lh_aparc_volume.txt --skip
+
+  aparcstats2table --subjectsfile $subjects_path --hemi rh --tablefile rh_aparc_area.txt --skip
+  aparcstats2table --subjectsfile $subjects_path --hemi lh --tablefile lh_aparc_area.txt --skip
+
+  # asegstats2table --statsfile hipposubfields.lh.T1.v22.stats --subjectsfile $subjects_path --tablefile hipposubfields.lh.T1.txt --skip
+  # asegstats2table --statsfile hipposubfields.rh.T1.v22.stats --subjectsfile $subjects_path --tablefile hipposubfields.rh.T1.txt --skip
+
+  # thalamus
+  # asegstats2table --statsfile thalamic-nuclei.lh.v13.T1.stats --subjectsfile $subjects_path --tablefile thalamic-nuclei.lh.T1.txt
+  # asegstats2table --statsfile thalamic-nuclei.rh.v13.T1.stats --subjectsfile $subjects_path --tablefile thalamic-nuclei.rh.T1.txt
+
+  # asegstats2table --statsfile brainstem.v13.stats --subjectsfile $subjects_path --tablefile brainstem.txt --skip
+}
+
 reconall() {
 
   # Iterate through the array using a for loop

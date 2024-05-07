@@ -5,7 +5,7 @@ import helper_functions as h
 import argparse
 import prepare_dirs as pd
 
-# TODO: move number of iteration for docker as parameter or in setting
+
 N1 = 120
 N2 = 20
 
@@ -16,7 +16,7 @@ class FreesurferTool():
         self.Table = t.Table(self.SET)
         self.Prepare = p.Prepare(self.SET, self.Table)
 
-
+    # to implement?
     def load_settings():
         pass
 
@@ -46,9 +46,13 @@ def registration():
     fs.Prepare.prepare_for_registration()
     fs.Docker.run("register", N1, N2) 
 
-def prepare_dicom():
-    pd.process_folders()
-    
+# def prepare_dicom():
+#    pd.process_folders()
+
+def fs_tables():
+    fs = FreesurferTool(origin_folder="reconall", destination_folder="reconall")
+    fs.Prepare.prepare_for_tables()
+    fs.Docker.run("create_tables", 1, 1) 
 
 def run_selected_function(args) -> None:
 
@@ -56,14 +60,16 @@ def run_selected_function(args) -> None:
         create_table()
     elif args.option == "samseg":
         run_samseg()
-    elif args.option == "dicom_convert":
+    elif args.option == "convert":
         convert_dicom()
     elif args.option == "reconall":
         run_recon_all()
     elif args.option == "register":
         registration()
-    elif args.option == "dicom_prepare":
-        registration()
+    elif args.option == "fstables":
+        fs_tables()
+    # elif args.option == "dicom_prepare":
+    #     prepare_dicom()
     else:
         print("Invalid option. Please provide a valid option.")
 

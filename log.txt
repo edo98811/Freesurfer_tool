@@ -482,3 +482,41 @@ with command: sh freesurfer.sh reconall 12 12 >/dev/null 2>&1
 repetitions per loop: 2 
 
 
+on 2024-04-03 15:29:10.222184 containers started: 
+    edoardo_freesurfer_1
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+with command: sh freesurfer.sh convertdicom 120 120 >/dev/null 2>&1
+repetitions per loop: 20 
+
+
+on 2024-04-03 15:30:46.058343 containers started: 
+    edoardo_freesurfer_1
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+with command: sh freesurfer.sh reconall 4 4 >/dev/null 2>&1
+repetitions per loop: 1 
+
+
+on 2024-04-03 15:43:34.578809 containers started: 
+    edoardo_freesurfer_5
+with command: sh freesurfer.sh create_tables 1 1 >/dev/null 2>&1
+repetitions per loop: 1 
+
+
+on 2024-04-04 10:47:16.025717 containers started: 
+    edoardo_freesurfer_1
+with command: sh freesurfer.sh create_tables 1 1 >/dev/null 2>&1
+repetitions per loop: 1 
+
+
+on 2024-04-05 09:55:33.913855 containers started: 
+    edoardo_freesurfer_1
+with command: sh freesurfer.sh create_tables 1 1 >/dev/null 2>&1
+repetitions per loop: 1 
+
+

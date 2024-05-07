@@ -20,7 +20,7 @@ class DockerInstance():
             os.makedirs(logf)
 
         start = 0
-        print(f"Total containers to be run: {n_loops + 1}, for {n_subj} total subjects and max {per_loop} per container")
+        print(f"Total containers to be run: {n_loops}, for {n_subj} total subjects and max {per_loop} per container")
         print("")
 
         # Set container index
