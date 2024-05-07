@@ -82,6 +82,54 @@ class Prepare():
 
     _save_files(source_docker_origin_path, source_docker_destination_path) 
 
+  def prepare_for_reconall_from_source(self, cols=["t1"], last=True)-> None: # for reconall only t1
+    
+    source_docker_origin_path = []
+    source_docker_destination_path = []
+
+    for _, row in self.df.iterrows():
+
+        # Iterate through the column of which the mris need to be converted
+        for col in cols:
+          try:
+            column = row[col]
+          except:
+            raise Warning("invalid column {col}")
+
+          rel_paths = row['paths']
+          converted = row['converted']
+          mris = row['mris']
+          
+          # If the column contains at least one mri
+          if len(column) > 0:
+
+              # in case only one per colum (the last) needs to be converted
+              if last:
+                column = [column[-1]] # to keep it as a list
+                print(f"kept column {column}")
+
+              # get the indexes only of the wanted mris (they are in the searched column)
+              indexes = [i for i, elem in enumerate(mris) if elem in column]
+              rel_paths_to_convert = []
+              converted_to_convert = []
+
+              # Keep only the necessary paths
+              for index in indexes: 
+
+                rel_paths_to_convert.append(rel_paths[index])
+                converted_to_convert.append(converted[index])
+              
+              # iterate though the list of mri to convert
+              for last_element, last_path, c in zip(column, rel_paths_to_convert, converted_to_convert):
+                # Create the key in the format "subj_id_acquisition"
+
+                if (not c):
+                  source_docker_origin_path.append(f"/ext/fs-subjects/{last_path}")
+                  source_docker_destination_path.append(f"/ext/processed-subjects/{row['acquisition']}/{last_element}.nii")
+
+    _save_files(source_docker_origin_path, source_docker_destination_path) 
+
+
   def prepare_for_reconall(self)-> None:
     
     source_docker_origin_path = []
@@ -133,3 +181,18 @@ class Prepare():
         source_docker_destination_path.append(f"{row['acquisition']}")
     
     _save_files(source_docker_origin_path, source_docker_destination_path) 
+
+  def prepare_for_tables(self)-> None:
+
+    subjects = []
+
+    for _, row in self.df.iterrows():
+        
+        if row["reconall"] == "Done": 
+
+            subject = f"{row['acquisition']}"
+            subjects.append(subject)
+
+    with open("tmp/subjects.txt", "w") as fp:
+      for item in subjects:
+        fp.write(f"{item}\n")

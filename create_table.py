@@ -260,7 +260,9 @@ class Table():
 
     # Check if nifti is present
     for index, row in self.table.iterrows():
-      for i , mri in enumerate(row["mris"]):
+      for _ , mri in enumerate(row["mris"]):
+        if ".nii" in mri:
+          continue
         if os.path.isfile(os.path.join(search_path_data, f"{row['acquisition']}", f"{mri}.nii")):
           self.table.at[index, "converted"].append(True)
         else:
