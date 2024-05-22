@@ -48,17 +48,17 @@ def remove_spaces_in_folders(base_directory):
             
             # Recursively call the function for subdirectories
             remove_spaces_in_folders(new_path)
-            
+
+# To be sure that when reading the table the contenent is parsed correctly (ex: lists are loaded as lists and not string)           
 def safe_eval(s: str) -> str:
     try:
         return ast.literal_eval(s)
     except (SyntaxError, ValueError):
         return s
-
-
  
 class Table():
-  def __init__(self, SET): 
+  def __init__(self, SET, find_type): 
+    self.find_type = find_type
     self.SET = SET
     if not os.path.isfile(os.path.join(self.SET["table_path"], self.SET["table_name"])):
       print(f"Creating Table in location: {os.path.join(self.SET["table_path"], self.SET["table_name"])}")
@@ -69,10 +69,11 @@ class Table():
       self.update_mris_table()
 
   def create_mris_table(self):
-      self.table = (self.create_table_df(os.path.join(self.SET["dicom"])))
 
-      self.create_subj_info()
-      self.add_processing_info(os.path.join(self.SET["reconall"]), os.path.join(self.SET["samseg"]), os.path.join(self.SET["nifti"]))
+      self.table = self.create_table_df(os.path.join(self.SET["rawdata"]))
+
+      #self.create_subj_info()
+      #self.add_processing_info(os.path.join(self.SET["reconall"]), os.path.join(self.SET["samseg"]), os.path.join(self.SET["nifti"]))
 
       
   def update_mris_table(self):
@@ -87,15 +88,18 @@ class Table():
 
 
 # to delete the return value
-  def create_table_df(self, base_directory: str, find_type="dicom"):
+  def create_table_df(self, base_directory: str):
+
       remove_spaces_in_folders(base_directory)
+
 
       data = {
         "acquisition": [],
         "mris": [],
         "paths": []
       }
-      if find_type == "dicom":
+      # TODO: write only one function foir dicom and nifti with conditions in critical parts
+      if self.find_type == "dicom":
         # Iterate through all the directories in base_directory
         for root, dirs, _ in os.walk(base_directory):
             
@@ -136,7 +140,8 @@ class Table():
                   data["mris"].append([dicom_dir]) 
                   data["paths"].append([rel_path])
 
-      elif find_type == "nifti":
+      # When you work with nifti, the difference is the way the image names are saved (without extension) and recognized
+      elif self.find_type == "nifti":
 
         # Iterate through all the directories in base_directory
         for root, dirs, niis in os.walk(base_directory):
@@ -162,6 +167,7 @@ class Table():
                 nii_file = nii_file[:-4]
 
                 # If its not the first iteration
+                # TODO: this can be uniformed for both dicom and nifti 
                 if len(data["acquisition"])!= 0:
 
                   # If it is not the same subject (acquisition ID al fondo della lista != acquisition ID attuale)
@@ -182,7 +188,7 @@ class Table():
                   data["paths"].append([rel_path])
       
       else: 
-        raise ValueError("find_type has invalid value (dicom or nifti)")
+        raise ValueError("find_type has invalid value (can be dicom or nifti)")
       
       return pd.DataFrame.from_dict(data)
 
@@ -261,9 +267,7 @@ class Table():
     # Check if nifti is present
     for index, row in self.table.iterrows():
       for _ , mri in enumerate(row["mris"]):
-        if ".nii" in mri:
-          continue
-        if os.path.isfile(os.path.join(search_path_data, f"{row['acquisition']}", f"{mri}.nii")):
+        if os.path.isfile(os.path.join(search_path_data, f"{row['acquisition']}", f"{mri}.nii")): # in caso i dati provengano da nii questo non funziona, devo aggiungere un modo per farlo funzionare
           self.table.at[index, "converted"].append(True)
         else:
           # nifti_folder = os.path.join(search_path_data, f"{row['acquisition']}", f"{mri}.nii")
@@ -296,3 +300,11 @@ class Table():
 
       # Close the Pandas Excel writer and save the Excel file
       writer._save()
+
+# Ho un problema, le funzioni per preparare funzionano con nii folder, questa cartella ha una struttura "acquisition, nii" qui no, o almeno se trovo direttamente le immagini convertite non e cosi. devo scrivere un qualcosa che i copi le cartelle 
+# pero a questo punto devo anche cambiare e mettere il nuovo nii folder. oppure considero sempre il dicom folder come dicom folder e non lo chiamo dicom ma rawdata folder o qualcosa del genere
+
+# ok quindi idea nuova: 
+# nifti parte non da nifti ma sempre da dicom folder, che non e dicom ma si chiama rawdata
+# ci deve essere una funzione in qualche modo che copia questi nii nella nuova cartella.
+# puo anche essere fatto in un altro modo, usando "path" dappertutto, ma a questo punto questa variabile "dicom o nii" deve essere ovunque o facile da settare se no viene fuori un casino 

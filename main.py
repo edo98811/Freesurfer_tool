@@ -10,10 +10,10 @@ N1 = 120
 N2 = 20
 
 class FreesurferTool():
-    def __init__(self, origin_folder="", destination_folder=""):
+    def __init__(self, origin_folder="dicom", destination_folder="nifti", start_type="dicom"):
         self.SET = h.read_settings_from_json("settings.json")
         self.Docker = d.DockerInstance(self.SET, origin_folder, destination_folder)
-        self.Table = t.Table(self.SET)
+        self.Table = t.Table(self.SET, find_type=start_type)
         self.Prepare = p.Prepare(self.SET, self.Table)
 
     # to implement?
@@ -21,8 +21,8 @@ class FreesurferTool():
         pass
 
 
-def create_table():
-    fs = FreesurferTool()
+def create_table(start_type="dicom"):
+    fs = FreesurferTool(start_type=start_type)
     fs.Table.save_table()
 
 def convert_dicom():
@@ -58,6 +58,8 @@ def run_selected_function(args) -> None:
 
     if args.option == "table":
         create_table()
+    if args.option == "tablenifti":
+        create_table(start_type="nifti")
     elif args.option == "samseg":
         run_samseg()
     elif args.option == "convert":

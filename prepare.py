@@ -37,7 +37,7 @@ class Prepare():
     self.df = table.table
     self.SET = SET
 
-  def prepare_for_conversion(self, cols=["t1", "t2", "flair"], last=True)-> None:
+  def prepare_for_conversion(self, cols=["t1", "t2", "flair"], last=True, move=False)-> None:
     
     source_docker_origin_path = []
     source_docker_destination_path = []
@@ -61,7 +61,7 @@ class Prepare():
               # in case only one per colum (the last) needs to be converted
               if last:
                 column = [column[-1]] # to keep it as a list
-                print(f"kept column {column}")
+                print(f"kept image {column}")
 
               # get the indexes of the wanted mris and find the correct rel path
               indexes = [i for i, elem in enumerate(mris) if elem in column]
@@ -77,8 +77,12 @@ class Prepare():
                 # Create the key in the format "subj_id_acquisition"
 
                 if (not c):
-                  source_docker_origin_path.append(f"/ext/fs-subjects/{last_path}")
-                  source_docker_destination_path.append(f"/ext/processed-subjects/{row['acquisition']}/{last_element}.nii")
+                  if move:
+                    shutil.copytree(os.path.join(self.SET["rawdata"], last_path, f"{last_element}.nii"), 
+                                    os.path.join(self.SET["nifti"], row['acquisition'], f"{last_element}.nii"))
+                  else:
+                    source_docker_origin_path.append(f"/ext/fs-subjects/{last_path}")
+                    source_docker_destination_path.append(f"/ext/processed-subjects/{row['acquisition']}/{last_element}.nii")
 
     _save_files(source_docker_origin_path, source_docker_destination_path) 
 
@@ -91,6 +95,7 @@ class Prepare():
 
         # Iterate through the column of which the mris need to be converted
         for col in cols:
+          # select column if it exists, otherwise throw warning
           try:
             column = row[col]
           except:
@@ -128,7 +133,6 @@ class Prepare():
                   source_docker_destination_path.append(f"/ext/processed-subjects/{row['acquisition']}/{last_element}.nii")
 
     _save_files(source_docker_origin_path, source_docker_destination_path) 
-
 
   def prepare_for_reconall(self)-> None:
     
