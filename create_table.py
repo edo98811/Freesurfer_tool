@@ -9,15 +9,23 @@ import re
 
 
 # Funtion to modify each time, it returns the aquisition name
-def acquisition_name(folder_path, image_name):
+def acquisition_name(folder_path, image_name, base_directory = ""):
+
 
   # if it is not nifti or it is a CT scan
   if "CCT " in image_name or not image_name.endswith(".nii"):
     return None
   
   # match this string (r string literal) with the last folder in the root
-  pattern = r'^.*?(?=_{2,})'
-  result = re.sub(pattern, '', folder_path.split('/')[-1])
+  # pattern = r'^(.*?)(?=_{2,})'
+  rel_path = os.path.relpath(folder_path, base_directory)
+  rel_path = rel_path.replace("/", "_")
+
+
+  pattern = r'(.{5,})(?=.*\1)'
+  result = re.sub(pattern, '', rel_path)
+
+
 
   return result
     # For each subdirectory in the directory (returns the acquistion name)
@@ -61,10 +69,10 @@ class Table():
     self.find_type = find_type
     self.SET = SET
     if not os.path.isfile(os.path.join(self.SET["table_path"], self.SET["table_name"])):
-      print(f"Creating Table in location: {os.path.join(self.SET["table_path"], self.SET["table_name"])}")
+      print(f"Creating Table in location: {os.path.join(self.SET['table_path'], self.SET['table_name'])}")
       self.create_mris_table() # posso rendere questo processo migliore? (ad es, la load se esiste, la crea se esiste), magari salvarla e un processo diverso
     else:
-      print(f"Updating table in location: {os.path.join(self.SET["table_path"], self.SET["table_name"])}")
+      print(f"Updating table in location: {os.path.join(self.SET['table_path'], self.SET['table_name'])}")
       # self.table = pd.read_excel(os.path.join(self.SET["table_path"], self.SET["table_name"]))
       self.update_mris_table()
 
@@ -155,7 +163,7 @@ class Table():
                 # Select the acquisition ID ( to change when new type of dataset) 
 
                 # acquisition = f"{root.split('/')[-2]}_{root.split('/')[-1]}"
-                acquisition = acquisition_name(root, nii_file)
+                acquisition = acquisition_name(root, nii_file, base_directory)
                 if acquisition == None:
                   continue
                 # acquisition = root.split("/")[-2]
