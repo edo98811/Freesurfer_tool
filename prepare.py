@@ -37,7 +37,7 @@ class Prepare():
     self.df = table.table
     self.SET = SET
 
-  def prepare_for_conversion(self, cols=["t1", "t2", "flair"], last=True, move=False)-> None:
+  def prepare_for_conversion(self, cols=["t1", "t2", "t2_flair", "t1_flair"], last=True, move=False)-> None:
     
     source_docker_origin_path = []
     source_docker_destination_path = []
@@ -178,7 +178,7 @@ class Prepare():
 
       if row["samseg"] == "Possible" or row["samseg"] == "Possible - only t2 not fl":
         t1 = eval(row["t1"])[-1]
-        t2 = eval(row["flair"])[-1] if len(eval(row["flair"])) > 0 else eval(row["t2"])[-1]
+        t2 = eval(row["t2_flair"])[-1] if len(eval(row["t2_flair"])) > 0 else eval(row["t2"])[-1]
 
         source_docker_origin_path.append(f"/ext/fs-subjects/{row['acquisition']}/{t1}.nii")
         source_docker_origin_path.append(f"/ext/fs-subjects/{row['acquisition']}/{t2}.nii")

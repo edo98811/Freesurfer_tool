@@ -80,8 +80,8 @@ class Table():
 
       self.table = self.create_table_df(os.path.join(self.SET["rawdata"]))
 
-      #self.create_subj_info()
-      #self.add_processing_info(os.path.join(self.SET["reconall"]), os.path.join(self.SET["samseg"]), os.path.join(self.SET["nifti"]))
+      self.create_subj_info()
+      self.add_processing_info(os.path.join(self.SET["reconall"]), os.path.join(self.SET["samseg"]), os.path.join(self.SET["nifti"]))
 
       
   def update_mris_table(self):
@@ -218,20 +218,27 @@ class Table():
         if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T2"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T2_no"]):
             self.table.at[rowname, "t2"].append(mri)
 
-    self.table["flair"] = [list() for _ in range(len(self.table.index))]
+    self.table["t2_flair"] = [list() for _ in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
       for mri in row["mris"]:
-        if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["FLAIR"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["FLAIR_no"]):
-          self.table.at[rowname, "flair"].append(mri)
+        if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["t2FLAIR"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["t2FLAIR_no"]):
+          self.table.at[rowname, "t2_flair"].append(mri)
+
+    self.table["t1_flair"] = [list() for _ in range(len(self.table.index))]
     
+    for rowname, row in self.table.iterrows():
+      for mri in row["mris"]:
+        if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["t1FLAIR"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["t1FLAIR_no"]):
+          self.table.at[rowname, "t1_flair"].append(mri)
+
     self.table["samseg"] = ["Not possible" for x in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
 
       if len(row["t1"]) >=1 and len(row["t2"]) >=1: 
         self.table.at[rowname, "samseg"] = "Possible - only t2 not fl"
-      elif len(row["t1"]) >=1 and len(row["flair"]) >=1: 
+      elif len(row["t1"]) >=1 and len(row["t2_flair"]) >=1: 
         self.table.at[rowname, "samseg"] = "Possible"
 
     self.table["reconall"] = ["Not possible" for x in range(len(self.table.index))]
@@ -245,7 +252,7 @@ class Table():
 
     # Delete rows that dont contain any useful MRIs (can delete if not needed)
     for rowname, row in self.table.iterrows():
-      if len(row["t1"]) == 1 and len(row["flair"]) == 0 and len(row["t2"]):
+      if len(row["t1"]) == 1 and len(row["t2_flair"]) == 0 and len(row["t2"]):
         self.table = self.table.drop(rowname, axis=0)
 
   def add_processing_info(self, search_path_reconall: str, search_path_samseg: str, search_path_data: str) -> None:
