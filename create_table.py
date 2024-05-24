@@ -215,10 +215,14 @@ class Table():
       # pref not loop 
       l = set()
       for mri in self.table.at[rowname, "t1"]:
+ 
+        if bool(re.search(r'[A-Z]$', mri)):
+          l.add(mri)
         if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1_pref_not"]):
           l.add(mri)
         if len(self.table.at[rowname, "t1"]) <= len(l) + 1:
           break
+        
       for n in l: 
         self.table.at[rowname, "t1"].remove(n)
       del(l)
