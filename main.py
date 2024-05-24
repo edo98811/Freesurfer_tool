@@ -10,7 +10,7 @@ N1 = 120
 N2 = 20
 
 class FreesurferTool():
-    def __init__(self, origin_folder="dicom", destination_folder="nifti", start_type="dicom"):
+    def __init__(self, origin_folder="rawdata", destination_folder="nifti", start_type="rawdata"):
         self.SET = h.read_settings_from_json("settings.json")
         self.Docker = d.DockerInstance(self.SET, origin_folder, destination_folder)
         self.Table = t.Table(self.SET, find_type=start_type)
@@ -21,15 +21,19 @@ class FreesurferTool():
         pass
 
 
-def create_table(start_type="dicom"):
+def create_table(start_type="rawdata"):
     fs = FreesurferTool(start_type=start_type)
     fs.Table.save_table()
 
 def convert_dicom():
-    fs = FreesurferTool(origin_folder="dicom", destination_folder="nifti")
+    fs = FreesurferTool(origin_folder="rawdata", destination_folder="nifti")
     fs.Prepare.prepare_for_conversion()
     # fs.Docker.debugging_container("convertdicom")
     fs.Docker.run("convertdicom", N1, N2)
+
+def prepare_nifti():
+    fs = FreesurferTool(origin_folder="rawdata", destination_folder="nifti")
+    fs.Prepare.prepare_for_conversion(move=True)
 
 def run_recon_all():
     fs = FreesurferTool(origin_folder="nifti", destination_folder="reconall")
@@ -62,8 +66,10 @@ def run_selected_function(args) -> None:
         create_table(start_type="nifti")
     elif args.option == "samseg":
         run_samseg()
-    elif args.option == "convert":
+    elif args.option == "convertdicom":
         convert_dicom()
+    elif args.option == "preparenifti":
+        prepare_nifti()
     elif args.option == "reconall":
         run_recon_all()
     elif args.option == "register":

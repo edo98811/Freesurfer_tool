@@ -12,17 +12,19 @@
         "T1": [
             "t1"
         ],
+        "T1_pref_not": [
+            "KM"
+        ],
         "T2": [
-            "T2",
             "t2"
         ],
         "t1FLAIR": [
-            "FLAIR",
-            "da-fl"
+            "t2fl",
+            "fl"
         ],
         "t2FLAIR": [
-            "FLAIR",
-            "da-fl"
+            "t1fl",
+            "fl"
         ],
         "T1_no": [
             "T2",
@@ -30,9 +32,13 @@
             "FLAIR"
         ],
         "T2_no": [
-            "da-fl"
+            "fl"
         ],
-        "t1FLAIR_no": [],
-        "t2FLAIR_no": []
+        "t1FLAIR_no": [
+            "t2"
+        ],
+        "t2FLAIR_no": [
+            "t1"
+        ]
     }
 }

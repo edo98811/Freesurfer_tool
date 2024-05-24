@@ -42,47 +42,59 @@ class Prepare():
     source_docker_origin_path = []
     source_docker_destination_path = []
 
+    f = open(f"{self.SET['nifti']}/log.txt", "w")
     for _, row in self.df.iterrows():
 
-        # Iterate through the column of which the mris need to be converted
-        for col in cols:
-          try:
-            column = row[col]
-          except:
-            raise Warning("invalid column {col}")
+      f.write(f"In subject {row['acquisition']}\n")
 
-          rel_paths = row['paths']
-          converted = row['converted']
-          mris = row['mris']
-          
-          # If the column contains at least one mri
-          if len(column) > 0:
+      # Iterate through the column of which the mris need to be converted
+      for col in cols:
+        try:
+          column = row[col]
+        except:
+          raise Warning("invalid column {col}")
 
-              # in case only one per colum (the last) needs to be converted
-              if last:
-                column = [column[-1]] # to keep it as a list
-                print(f"kept image {column}")
+        rel_paths = row['paths']
+        converted = row['converted']
+        mris = row['mris']
+        
+        # If the column contains at least one mri
+        if len(column) > 0:
 
-              # get the indexes of the wanted mris and find the correct rel path
-              indexes = [i for i, elem in enumerate(mris) if elem in column]
-              rel_paths_to_convert = []
-              converted_to_convert = []
-              for index in indexes: 
+            # in case only one per colum (the last) needs to be converted
+            if last:
+              column = [column[-1]] # to keep it as a list
+              f.write(f"  from column {col} kept image {column}\n")
 
-                rel_paths_to_convert.append(rel_paths[index])
-                converted_to_convert.append(converted[index])
-              
-              # iterate though the list of mri to convert
-              for last_element, last_path, c in zip(column, rel_paths_to_convert, converted_to_convert):
-                # Create the key in the format "subj_id_acquisition"
+            # get the indexes of the wanted mris and find the correct rel path
+            indexes = [i for i, elem in enumerate(mris) if elem in column]
+            rel_paths_to_convert = []
+            converted_to_convert = []
+            for index in indexes: 
 
-                if (not c):
-                  if move:
-                    shutil.copytree(os.path.join(self.SET["rawdata"], last_path, f"{last_element}.nii"), 
+              rel_paths_to_convert.append(rel_paths[index])
+              converted_to_convert.append(converted[index])
+            
+            # iterate though the list of mri to convert
+            for last_element, last_path, c in zip(column, rel_paths_to_convert, converted_to_convert):
+              # Create the key in the format "subj_id_acquisition"
+
+              if (not c):
+                if move:
+                  if os.path.exists(os.path.join(self.SET["rawdata"], last_path)):
+                    os.makedirs(os.path.join(self.SET["nifti"], row['acquisition']), exist_ok=True)
+                    shutil.copy(os.path.join(self.SET["rawdata"], last_path), 
                                     os.path.join(self.SET["nifti"], row['acquisition'], f"{last_element}.nii"))
-                  else:
+                  else: 
+                    raise Exception("trying to prepare nifti but dicom found, maybe you wanted to use 'convertdicom'")
+                else:
+                  if not os.path.isfile(os.path.join(self.SET["rawdata"], last_path)):
                     source_docker_origin_path.append(f"/ext/fs-subjects/{last_path}")
                     source_docker_destination_path.append(f"/ext/processed-subjects/{row['acquisition']}/{last_element}.nii")
+                  else:
+                    raise Exception("trying to convert dicom but file found, maybe you wanted to use 'preparnifti'")
+      f.write("\n")
+    f.close()
 
     _save_files(source_docker_origin_path, source_docker_destination_path) 
 

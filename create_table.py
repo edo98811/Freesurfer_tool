@@ -204,13 +204,26 @@ class Table():
 
     self.table["converted"] = [list() for _ in range(len(self.table.index))]
     
+    # T1 loop
     self.table["t1"] = [list() for _ in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
       for mri in row["mris"]:
         if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1_no"]):
             self.table.at[rowname, "t1"].append(mri)
+      
+      # pref not loop 
+      l = set()
+      for mri in self.table.at[rowname, "t1"]:
+        if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1_pref_not"]):
+          l.add(mri)
+        if len(self.table.at[rowname, "t1"]) <= len(l) + 1:
+          break
+      for n in l: 
+        self.table.at[rowname, "t1"].remove(n)
+      del(l)
 
+    # T2 loop
     self.table["t2"] = [list() for _ in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
@@ -218,6 +231,7 @@ class Table():
         if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T2"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T2_no"]):
             self.table.at[rowname, "t2"].append(mri)
 
+    # T2 flair loop
     self.table["t2_flair"] = [list() for _ in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
@@ -225,6 +239,7 @@ class Table():
         if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["t2FLAIR"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["t2FLAIR_no"]):
           self.table.at[rowname, "t2_flair"].append(mri)
 
+    # T1 flair loop
     self.table["t1_flair"] = [list() for _ in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
@@ -232,15 +247,19 @@ class Table():
         if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["t1FLAIR"]) and not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["t1FLAIR_no"]):
           self.table.at[rowname, "t1_flair"].append(mri)
 
+    # Samseg
     self.table["samseg"] = ["Not possible" for x in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
 
       if len(row["t1"]) >=1 and len(row["t2"]) >=1: 
         self.table.at[rowname, "samseg"] = "Possible - only t2 not fl"
+      elif len(row["t1"]) >=1 and len(row["t1_flair"]) >=1: 
+        self.table.at[rowname, "samseg"] = "Possible - only t1fl not t2fl"
       elif len(row["t1"]) >=1 and len(row["t2_flair"]) >=1: 
         self.table.at[rowname, "samseg"] = "Possible"
 
+    # reconall
     self.table["reconall"] = ["Not possible" for x in range(len(self.table.index))]
     
     for rowname, row in self.table.iterrows():
