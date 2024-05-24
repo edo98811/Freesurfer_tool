@@ -15,6 +15,7 @@ class DockerInstance():
         n_loops = math.ceil(n_subj/per_loop)
         
         # TODO: add check on source and destination
+        # TODO: put the command creation in a function because it is the same for both
         logf = os.path.join(self.SET["base_path"], "docker_logs")
         if not os.path.exists(logf):
             os.makedirs(logf)
@@ -50,7 +51,7 @@ class DockerInstance():
             command = [ # " ".join(
                 "docker", "run", "--rm", "--name", f"edoardo_freesurfer_{max_number}",
                 "-v", f"{self.SET["license_path"]}:/license.txt:ro",
-                "-v", f"{self.SET["base_path"]}/freesurfer_all.sh:/root/freesurfer.sh",
+                "-v", f"{self.SET["app_path"]}/freesurfer_all.sh:/root/freesurfer.sh",
                 "-v", f"{self.SET["app_path"]}/tmp:/info:ro",
                 "-v", f"{self.SET[self.destination]}:/ext/processed-subjects",
                 "-v", f"{self.SET[self.source]}:/ext/fs-subjects",
@@ -101,7 +102,7 @@ class DockerInstance():
         command = [ # " ".join(
             "docker", "run", "--rm", "--name", f"edoardo_freesurfer_{max_number}",
             "-v", f"{self.SET["license_path"]}:/license.txt:ro",
-            "-v", f"{self.SET["base_path"]}/freesurfer_all.sh:/root/freesurfer.sh",
+            "-v", f"{self.SET["app_path"]}/freesurfer_all.sh:/root/freesurfer.sh",
             "-v", f"{self.SET["app_path"]}/tmp:/info:ro",
             "-v", f"{self.SET[self.destination]}:/ext/processed-subjects",
             "-v", f"{self.SET[self.source]}:/ext/fs-subjects",

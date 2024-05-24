@@ -10,7 +10,7 @@ N1 = 120
 N2 = 20
 
 class FreesurferTool():
-    def __init__(self, origin_folder="rawdata", destination_folder="nifti", start_type="rawdata"):
+    def __init__(self, origin_folder="rawdata", destination_folder="nifti", start_type="dicom"):
         self.SET = h.read_settings_from_json("settings.json")
         self.Docker = d.DockerInstance(self.SET, origin_folder, destination_folder)
         self.Table = t.Table(self.SET, find_type=start_type)
@@ -21,7 +21,7 @@ class FreesurferTool():
         pass
 
 
-def create_table(start_type="rawdata"):
+def create_table(start_type="dicom"):
     fs = FreesurferTool(start_type=start_type)
     fs.Table.save_table()
 
@@ -88,8 +88,8 @@ def main() -> None :
     
     # Add argument for the function selection
     parser.add_argument("option", type=str, help="Write the name of a function")
-    parser.add_argument("--N1", type=int, default=120)
-    parser.add_argument("--N2", type=int, default=20)
+    parser.add_argument("--N1", type=int, default=120, help="total number of images to process")
+    parser.add_argument("--N2", type=int, default=20, help="number of images per container")
     
     # Parse the command-line arguments
     args = parser.parse_args()

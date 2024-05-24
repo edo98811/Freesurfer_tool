@@ -42,7 +42,9 @@ class Prepare():
     source_docker_origin_path = []
     source_docker_destination_path = []
 
-    f = open(f"{self.SET['nifti']}/log.txt", "w")
+    os.makedirs(os.path.join(self.SET["nifti"]), exist_ok=True)
+    f = open(f"{self.SET['nifti']}log.txt", "w")
+
     for _, row in self.df.iterrows():
 
       f.write(f"In subject {row['acquisition']}\n")
@@ -61,10 +63,25 @@ class Prepare():
         # If the column contains at least one mri
         if len(column) > 0:
 
-            # in case only one per colum (the last) needs to be converted
+            # in case only one per colum and move the biggest needs to be converted
             if last:
-              column = [column[-1]] # to keep it as a list
-              f.write(f"  from column {col} kept image {column}\n")
+              if move:
+                indexes = [i for i, elem in enumerate(mris) if elem in column]
+                f.write(f"{indexes}\n")
+                largest_size = 0
+
+                for index in indexes:
+                  file_size = os.path.getsize(os.path.join(self.SET["rawdata"], rel_paths[index]))
+
+                  if file_size > largest_size:
+                      largest_size = file_size
+                      column = [mris[index]]
+
+            # in case only one per colum (the last) needs to be converted
+              else:
+                column = [column[-1]] # to keep it as a list
+
+            f.write(f"  from column {col} kept image {column}\n")
 
             # get the indexes of the wanted mris and find the correct rel path
             indexes = [i for i, elem in enumerate(mris) if elem in column]
@@ -98,7 +115,7 @@ class Prepare():
 
     _save_files(source_docker_origin_path, source_docker_destination_path) 
 
-  def prepare_for_reconall_from_source(self, cols=["t1"], last=True)-> None: # for reconall only t1
+  def prepare_for_reconall_from_source_deprecated(self, cols=["t1"], last=True)-> None: 
     
     source_docker_origin_path = []
     source_docker_destination_path = []

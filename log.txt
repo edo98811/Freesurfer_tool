@@ -520,3 +520,35 @@ with command: sh freesurfer.sh create_tables 1 1 >/dev/null 2>&1
 repetitions per loop: 1 
 
 
+on 2024-05-24 11:02:11.393370 containers started: 
+    edoardo_freesurfer_1
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+with command: sh freesurfer.sh reconall 110 110 >/dev/null 2>&1
+repetitions per loop: 10 
+
+
+on 2024-05-24 11:48:22.715108 containers started: 
+    edoardo_freesurfer_1
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+    edoardo_freesurfer_7
+    edoardo_freesurfer_8
+    edoardo_freesurfer_9
+    edoardo_freesurfer_10
+    edoardo_freesurfer_11
+with command: sh freesurfer.sh reconall 110 110 >/dev/null 2>&1
+repetitions per loop: 10 
+
+
