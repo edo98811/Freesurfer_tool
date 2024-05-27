@@ -552,3 +552,14 @@ with command: sh freesurfer.sh reconall 110 110 >/dev/null 2>&1
 repetitions per loop: 10 
 
 
+on 2024-05-27 10:22:41.829391 containers started: 
+    edoardo_freesurfer_1
+    edoardo_freesurfer_2
+    edoardo_freesurfer_3
+    edoardo_freesurfer_4
+    edoardo_freesurfer_5
+    edoardo_freesurfer_6
+with command: sh freesurfer.sh register 120 120 >/dev/null 2>&1
+repetitions per loop: 20 
+
+

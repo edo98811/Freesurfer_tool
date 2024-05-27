@@ -43,7 +43,7 @@ def run_recon_all():
 def run_samseg():
     fs = FreesurferTool(origin_folder="nifti", destination_folder="samseg")
     fs.Prepare.prepare_for_samseg()
-    # fs.Docker.run("samseg", N1, N2) 
+    fs.Docker.run("samseg", N1, N2) 
 
 def registration():
     fs = FreesurferTool(origin_folder="nifti", destination_folder="nifti")

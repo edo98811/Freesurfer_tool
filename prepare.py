@@ -37,6 +37,13 @@ class Prepare():
     self.df = table.table
     self.SET = SET
 
+  """
+  This function is the most complex, it either prepares to convert some images or directly copies them if they are nicti
+  it selects them iterating through the columns requested, then either taking the last image listed or selectign the biggest
+  the takes the path from "paths" 
+  it then adds it to the origin and destinations text files it if not yet converted (or copies) it to the nifti folder
+  """
+  
   def prepare_for_conversion(self, cols=["t1", "t2", "t2_flair", "t1_flair"], last=True, move=False)-> None:
     
     source_docker_origin_path = []
@@ -172,11 +179,16 @@ class Prepare():
 
       if row["reconall"] == "Possible":
 
-        if f"/ext/fs-subjects/{row['acquisition']}/{row["t1"][-1]}.nii" != f"/ext/fs-subjects/{row['acquisition']}/{row["t1"][-1]}.nii".replace(" ", ""):
-          print (f"non valid name for freesurfer: /ext/fs-subjects/{row['acquisition']}/{row["t1"][-1]}.nii")
+        # Select the t1 as described below
+        for mri in row["t1"]:
+          if row["converted"][row["mris"].index(mri)]: # if the element in converted that has the same position as the mri I am checking in the mris vector is true
+            t1 = mri
+
+        if f"/ext/fs-subjects/{row['acquisition']}/{t1}.nii" != f"/ext/fs-subjects/{row['acquisition']}/{t1}.nii".replace(" ", ""):
+          print (f"non valid name for freesurfer: /ext/fs-subjects/{row['acquisition']}/{t1}.nii")
           continue
         
-        source_docker_origin_path.append(f"/ext/fs-subjects/{row['acquisition']}/{row["t1"][-1]}.nii")
+        source_docker_origin_path.append(f"/ext/fs-subjects/{row['acquisition']}/{t1}.nii")
         source_docker_destination_path.append(f"{row['acquisition']}")
     
     _save_files(source_docker_origin_path, source_docker_destination_path) 
@@ -189,7 +201,11 @@ class Prepare():
     for _, row in self.df.iterrows():
 
       if row["samseg"] == "Prepared":
-        t1 = eval(row["t1"])[-1]
+
+        # Select the t1 
+        for mri in row["t1"]:
+          if row["converted"][row["mris"].index(mri)]: # if the element in converted that has the same position as the mri I am checking in the mris vector is true
+            t1 = mri
         
         # Add the paths to the origins and destination file
         source_docker_origin_path.append(f"/ext/fs-subjects/{row['acquisition']}/{t1}.nii")
@@ -206,8 +222,25 @@ class Prepare():
     for _, row in self.df.iterrows():
 
       if row["samseg"] == "Possible" or row["samseg"] == "Possible - only t2 not fl":
-        t1 = eval(row["t1"])[-1]
-        t2 = eval(row["t2_flair"])[-1] if len(eval(row["t2_flair"])) > 0 else eval(row["t2"])[-1]
+        
+        # Select the t1 as described below
+        for mri in row["t1"]:
+          if row["converted"][row["mris"].index(mri)]: # if the element in converted that has the same position as the mri I am checking in the mris vector is true
+            t1 = mri
+
+        if len(row["t2_flair"]) > 0:
+          source = row["t2_flair"]
+        elif len(row["t1_flair"]) > 0:
+          source = row["t1_flair"]
+        else:
+          source = row["t2"]
+        
+        # Selects the mri that has already been converted in the source list. by checking which is marked as true in th converted vecteor
+        for mri in source:
+          if row["converted"][row["mris"].index(mri)]: # if the element in converted that has the same position as the mri I am checking in the mris vector is true
+            t2 = mri
+
+        # old: t2 = eval(row["t2_flair"])[-1] if len(eval(row["t2_flair"])) > 0 else eval(row["t2"])[-1]
 
         source_docker_origin_path.append(f"/ext/fs-subjects/{row['acquisition']}/{t1}.nii")
         source_docker_origin_path.append(f"/ext/fs-subjects/{row['acquisition']}/{t2}.nii")
