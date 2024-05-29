@@ -201,6 +201,36 @@ class Table():
       return pd.DataFrame.from_dict(data)
 
   def create_subj_info(self):
+    
+    def _add_info(image_type: str) -> None:
+      self.table[image_type] = [list() for _ in range(len(self.table.index))]
+    
+      for rowname, row in self.table.iterrows():
+        # iterate though all the mris in the mri folder 
+        for mri in row[image_type]:
+          if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"][f"{image_type}"]) and \
+          not any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"][f"{image_type}_no"]):
+            
+            self.table.at[rowname, image_type].append(mri)
+          
+          # loop to select the preferred images (discarding the files that contain the pref not identifier, if possible)
+          l = set()
+          for mri in self.table.at[rowname, image_type]:
+
+            ## PROJECT SPECIFIC ##
+            if rowname == image_type:
+              if bool(re.search(r'[A-Z]$', mri)):
+                l.add(mri)
+            ######################
+
+            if any(MRI_name_substring in mri for MRI_name_substring in self.SET["file_identifiers"]["T1_pref_not"]):
+              l.add(mri)
+            if len(self.table.at[rowname, image_type]) <= len(l) + 1:
+              break
+            
+          for n in l: 
+            self.table.at[rowname, image_type].remove(n)
+          del(l)
 
     self.table["converted"] = [list() for _ in range(len(self.table.index))]
     

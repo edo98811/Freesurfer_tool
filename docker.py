@@ -9,7 +9,20 @@ class DockerInstance():
         self.source = source
         self.destination = destination
         self.SET = SET
-
+    
+    def _command_function(self, max_number: int) -> list[str]:
+        return [ # " ".join(
+                "docker", "run", "--rm", "--name", f"edoardo_freesurfer_{max_number}",
+                "-v", f"{self.SET["license_path"]}:/license.txt:ro",
+                "-v", f"{self.SET["app_path"]}/freesurfer_all.sh:/root/freesurfer.sh",
+                "-v", f"{self.SET["app_path"]}/tmp:/info:ro",
+                "-v", f"{self.SET[self.destination]}:/ext/processed-subjects",
+                "-v", f"{self.SET[self.source]}:/ext/fs-subjects",
+                "-e", "FS_LICENSE=license.txt",
+                "1b0f81a8cb9f",
+                "sh", "freesurfer.sh"
+            ]
+        
     def run(self, function, n_subj, per_loop, log_file="log.txt"):
 
         n_loops = math.ceil(n_subj/per_loop)
@@ -59,6 +72,7 @@ class DockerInstance():
                 "1b0f81a8cb9f",
                 "sh", "freesurfer.sh", function, str(start), str(end)
             ]
+            # command = _command_function(max_number) + [function, str(start), str(end)]
 
             with open(f"{logf}/edoardo_freesurfer_{max_number}.txt", "w") as f:
                 subprocess.Popen(command, stdout=f, stderr=f)
@@ -110,6 +124,7 @@ class DockerInstance():
             "1b0f81a8cb9f",
             "sh", "freesurfer.sh", function
         ]
+        # command = _command_function(max_number) + [function]
 
         # with open(f"{logf}/edoardo_freesurfer_{max_number}.txt", "w") as f:
         subprocess.Popen(command)

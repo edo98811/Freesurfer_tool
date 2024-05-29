@@ -66,7 +66,7 @@ class Prepare():
         rel_paths = row['paths']
         converted = row['converted']
         mris = row['mris']
-        
+
         # If the column contains at least one mri
         if len(column) > 0:
 
